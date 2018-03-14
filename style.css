@@ -9,4 +9,12 @@ html {
   .footer {
     position: absolute;
     bottom: 0;
+    width: 100%;
     }
+
+h3{
+      text-align:center;
+      font-style:italic;
+      color: firebrick;
+      font-size:2em;
+  }
