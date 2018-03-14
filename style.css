@@ -5,3 +5,8 @@ html {
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover; /* version standardisée */
   }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    }
