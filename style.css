@@ -13,7 +13,8 @@ html {
 
 h3{
       text-align:center;
+      left: 37%;
       font-style:italic;
-      color: firebrick;
+      color: rgb(192, 11, 11);
       font-size:2em;
   }
