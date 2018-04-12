@@ -1,17 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title >DataViz</title>
-  <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>	
-  <h1 align="center">DataViz</h1>
-  <h2 align="center">
-    <em>Les accidents de la route en France.</em>
-</h2>
-</head>
-<body>
-  <h3 align="center" class="footer"><div style="padding:3px; border-top:5px dashed #fff; border-bottom:5px dashed #fff; background-color:#e3e3e3;"> Site web en construction!</div></h3>
-</body>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Les accidents de la route en France</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+		<!-- Importer ou instatller des packages css, java...-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="js/skel.min.js"></script>
+		<script type="text/javascript" src="js/skel-layers.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		 <script type="text/javascript" src="quizz.js"></script>
+		<script type="text/javascript" src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/animate.css" />
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+		</noscript>
+
+	</head>
+
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="index.html"></a></h1>
+				<br>
+				<ul class="list">
+				<div id='buttons'>
+                   <li> <a href='https://www.facebook.com/kantona.camara' target="_blank">
+                            <img width="20" height="30" src="images/facebook.png" alt="Facebook" /></a> </li>
+                    <li> <a href='https://www.linkedin.com/in/youssouf-camara-039a9860/' target='_blank'>
+                        <img width="20" height="30" src="images/linkedin.png" alt="LinkedIn" /></a> </li>
+        </div>
+				</ul>
+				<nav id="nav">
+					<ul>
+						<li><a style="color:black" href="#intro"> <font size="+1">Introduction</font ></a></li>
+						<li><a style="color:black" href="#quizz"><font size="+1">Quizz</font ></a></li>
+						<li><a style="color:black" href="#part1"><font size="+1">Première partie</font ></a></li>
+						<li><a style="color:black" href="#part2"><font size="+1">Deuxième partie</font ></a></li>
+						<li><a style="color:black" href="#part3"><font size="+1">Conclusion et recommandation</font ></a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+<section id="banner">
+				<div style="font-size: 250px;">
+				<i class="fa fa-globe" style="color:#505000" aria-hidden="true"></i>
+				</div>
+			<h2 class="animated fadeInUpBig" style="color:#505000"> Les accidents de la route en France</h2>
+				<h3 style="color:red"> Notre site est en construction !</h3>
+</section>
+
+	<!-- Première partie -->
+
+<section id="intro" class="wrapper style7 align-center">
+			<div style="font-size: 100px;">
+			<i class="fa fa-globe" style="color:#505000" aria-hidden="true"></i>
+			</div>
+  		<h1 style="color:#505000" class="titre_section"> Que savez-vous sur les accidents de la route en France ? </h1>
+			<h2> Dans cette partie nous allons poser le problème et faire un bref résumé de notre histoire. </h2>
+</section>
+
+<div class="paraxify intermede-4" style="background-position: center center;"> </div>
+
+	<!-- Quizz partie -->
+
+<section id="quizz" class="wrapper style3 align-center">
+		<div style="font-size: 100px;">
+		<i class="fa fa-globe" style="color:#505000" aria-hidden="true"></i>
+		</div>
+		<h1 style="color:#505000"> Testez vos connaissances ! </h1>
+
+		<div class="container">
+		 <div id="frame" role="content"></div>
+		</div>
+</section>
+
+<div class="paraxify intermede-3" style="background-position: center center;"></div>
+
+	<!-- prémière et deuxième partie  -->
+
+<section id="part1" class="wrapper style2 align-center">
+		<div style="font-size: 100px;">
+		<i class="fa fa-globe" style="color:#505000" aria-hidden="true"></i>
+		</div>
+ 			<h1 style="color:#505000"> Notre prémière histoire </h1>
+			<h2> Celle-ci concerne,..., je ne sais plus trop à voir :D </h2>
+</section>
+
+<section id="part2" class="wrapper style12 align-center">
+			<div class="container">
+				<header>
+					<h2>Une sous histoire que nous allons raconter ici... Be patient we are coming ;) !</h2>
+					<div style="color:#505000;text-align: justify;"> Le savez-vous ? que si tu sais que je sais, alor je ne sais plus ce que je voulais dire... </div>
+				</header>
+			</div>
+
+</section>
+
+<div class="paraxify intermede-2" style="background-position: center center;"></div>
+
+	<!-- Troisième partie -->
+
+<section id="prat3" class="wrapper style9 align-center">
+		<div style="font-size: 100px;">
+		<i class="fa fa-globe" style="color:#505000" aria-hidden="true"></i>
+		</div>
+ 			<h1 style="color:#505000"> Et si on vous racontait ce que vous pensiez connaître...</h1>
+			<h2> Tel a dit, tel autre a dit ... </h2>
+
+</section>
+
+	</body>
 </html>
