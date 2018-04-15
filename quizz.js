@@ -4,7 +4,7 @@
     var quiz = [
         {
             "question"      :   "",
-            "image"         :   "D2.jpg",
+            "image"         :   D2.jpg,
             "choices"       :   [
                                     "La matinée",
                                     "En journée",
