@@ -3,50 +3,49 @@
 
     var quiz = [
         {
-            "question"      :   "Selon vous, quel est le moment propice pour avoir un acident, si on roule comme un ...?",
+            "question"      :   "Selon vous, quel est le moment propice pour avoir un acident :D ?",
             "image"         :   "",
             "choices"       :   [
-                                    "La matinée",
-                                    "En journée",
-                                    "fin de journée",
-                                    "La nuit"
+                                    "Au crépuscule ou à l'aube",
+                                    "En plein jour",
+                                    "La nuit avec ou sans éclairage",
                                 ],
-            "correct"       :   "En journée",
-            "explanation"   :   "C'est bizzare non ? Mais c'est que les données disent oh... hélas, il faut être en journée pour qu'il ait lieu un accident", /* Ici, tapez exactement l'intitulé de la réponse correcte plus haut (il faut que ce soit EXACTEMENT la même chaine de caractère */
+            "correct"       :   "En plein jour",
+            "explanation"   :   "C'est bizzare non ? Evidemment que non, contrairement aux idées reçues, la majorité des accidents ont lieu en journée. En effet, en 2016, 2/3 des accidents de la route se sont produit en plein jour et 4/5 par beau temps(source: fichier BAAC).",
         },
         {
-            "question"      :   "Selon vous, où as lieu les accidents de la route ?",
+            "question"      :   "Selon vous, où ont lieu les accidents de la route ?",
             "image"         :   "",
             "choices"       :   [
-                                    "Sur les route étroite",
+                                    "Sur les routes nationales",
                                     "Sur les autoroutes",
-                                    "En agglomération",
-                                    "Dans les campagnes..."
+                                    "Sur les voies communales",
+                                    "Sur les routes départementales",
                                 ],
             "correct"       :   "En agglomération",
-            "explanation"   :   "Les accidents ont lieu dans les endroits en agglomération...",
+            "explanation"   :   "Selon les statistiques du fichier national des accidents de la route (BAAC), les accidents ont majoritairement lieu sur les voies communales (19%) et sur les routes departementales (11%).",
         },
         {
-             "question"      :   "Une dernière pour la fin, dans quel état se trouve la majorité des victimes ?",
+             "question"      :   "Une dernière pour la fin, dans quel état se trouve les victimes des accidents?",
             "image"         :   "",
             "choices"       :   [
                                     "Ivresse avancée",
                                     "Fatigue chronique",
-                                    "Endormissement exagéré",
+                                    "Sommeil au volant",
                                 ],
-            "correct"       :   "Fatigue chronique",
-            "explanation"   :   "Je ne sais pas, car c'est comme ça...",
+            "correct"       :   "Ivresse avancée",
+            "explanation"   :   "En 2014, 92% des présumés étant à l'origine d'un accident mortel étaient alcoolisés ; 91% d'eux ont été controlés positifs aux stupéfiants (source: fichier BAAC)",
         },
 
         {
-             "question"      :   "Enfin, selon vous, quel est le sexe le plus susceptible d'avoir un accident ?",
+             "question"      :   "Et non voici là, Enfin, selon vous, quel est le sexe le plus susceptible d'avoir un accident ?",
             "image"         :   "",
             "choices"       :   [
                                     "Féminin",
                                     "Masculin",
                                 ],
             "correct"       :   "Féminin",
-            "explanation"   :   "Haha, le meilleur toujours pour la fin. La majorité des accidents sont causés par les hommes (60% en 2016)",
+            "explanation"   :   "Haha, le meilleur toujours pour la fin. La majorité des accidents sont causés par les hommes (75% en 2015, source: BAAC)",
         },
 
     ];
