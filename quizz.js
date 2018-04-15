@@ -3,7 +3,7 @@
 
     var quiz = [
         {
-            "question"      :   "",
+            "question"      :   " je ne sais pas ce que je fais alors il ne faut pas tarder comme ",
             "image"         :   "D2.jpg",
             "choices"       :   [
                                     "La matinée",
