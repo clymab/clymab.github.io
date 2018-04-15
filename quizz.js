@@ -3,7 +3,7 @@
 
     var quiz = [
         {
-            "question"      :   " je ne sais pas ce que je fais alors il ne faut pas tarder comme ",
+            "question"      :   "",
             "image"         :   "D2.jpg",
             "choices"       :   [
                                     "La matinée",
@@ -15,7 +15,7 @@
             "explanation"   :   "C'est bizzare non ? Mais c'est que les données disent oh... hélas, il faut être en journée pour qu'il ait lieu un accident", /* Ici, tapez exactement l'intitulé de la réponse correcte plus haut (il faut que ce soit EXACTEMENT la même chaine de caractère */
         },
         {
-            "question"      :   "Selon vous, où as lieu les accidents de la route ?",
+            "question"      :   "Se ?",
             "image"         :   "K5.jpg",
             "choices"       :   [
                                     "Sur les route étroite",
