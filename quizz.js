@@ -38,7 +38,7 @@
         },
 
         {
-             "question"      :   "Et non voici là, Enfin, selon vous, quel est le sexe le plus susceptible d'avoir un accident ?",
+             "question"      :   "Et non voici la toute dernière, selon vous, quel est le sexe le plus susceptible d'avoir un accident ?",
             "image"         :   "",
             "choices"       :   [
                                     "Féminin",
