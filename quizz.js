@@ -4,7 +4,7 @@
     var quiz = [
         {
             "question"      :   "Selon vous, quel est le moment propice pour avoir un acident, si on roule comme un ...?",
-            "image"         :   "",
+            "image"         :   "D2.jpg",
             "choices"       :   [
                                     "La matinée",
                                     "En journée",
@@ -16,7 +16,7 @@
         },
         {
             "question"      :   "Selon vous, où as lieu les accidents de la route ?",
-            "image"         :   "",
+            "image"         :   "K5.jpg",
             "choices"       :   [
                                     "Sur les route étroite",
                                     "Sur les autoroutes",
