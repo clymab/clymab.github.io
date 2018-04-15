@@ -3,7 +3,7 @@
 
     var quiz = [
         {
-            "question"      :   "Selon vous, quel est le moment propice pour avoir un acident, si on roule comme un ...?",
+            "question"      :   "",
             "image"         :   "D2.jpg",
             "choices"       :   [
                                     "La matinée",
