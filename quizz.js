@@ -45,7 +45,7 @@
                                     "Masculin",
                                 ],
             "correct"       :   "Féminin",
-            "explanation"   :   "Haha, le meilleur toujours pour la fin. La majorité des accidents sont causés par les hommes (75% en 2015, source: BAAC)",
+            "explanation"   :   "Haha, le meilleur toujours pour la fin. Les hommes sont hélas les fameux «chauffards au volant»... (75% en 2015, source: BAAC)",
         },
 
     ];
