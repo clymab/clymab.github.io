@@ -26,6 +26,18 @@
             "explanation"   :   "Selon les statistiques du fichier national des accidents de la route (BAAC), les accidents ont majoritairement lieu sur les voies communales (19%) et sur les routes departementales (11%).",
         },
         {
+             "question"      :   "... sont majoritairement à l'origine des accidents de la route en france.",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Les jeunes",
+                                    "Les adultes",
+                                    "Les personnes agées",
+                                ],
+            "correct"       :   "Les jeunes",
+            "explanation"   :   "Chaque année, la route fait de nouvelles victimes. Les jeunes (agés entre 18 et 24 ans) sont particulièrement concernés : lorsque les premières responsabilités de l’âge adulte côtoient l’envie de liberté, les prises de risques sont trop fréquentes.",
+        },
+
+        {
              "question"      :   "Une dernière pour la fin, dans quel état se trouve les victimes des accidents?",
             "image"         :   "",
             "choices"       :   [
