@@ -22,7 +22,7 @@
                                     "Sur les voies communales",
                                     "Sur les routes départementales",
                                 ],
-            "correct"       :   "En agglomération",
+            "correct"       :   "Sur les voies communales",
             "explanation"   :   "Selon les statistiques du fichier national des accidents de la route (BAAC), les accidents ont majoritairement lieu sur les voies communales (19%) et sur les routes departementales (11%).",
         },
         {
