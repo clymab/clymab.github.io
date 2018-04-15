@@ -42,7 +42,7 @@
              "question"      :   "Enfin, selon vous, quel est le sexe le plus susceptible d'avoir un accident ?",
             "image"         :   "",
             "choices"       :   [
-                                    "Féminin ",
+                                    "Féminin",
                                     "Masculin",
                                 ],
             "correct"       :   "Féminin",
