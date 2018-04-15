@@ -3,8 +3,8 @@
 
     var quiz = [
         {
-            "question"      :   "",
-            "image"         :   D2.jpg,
+            "question"      :   "Selon vous, quel est le moment propice pour avoir un acident, si on roule comme un ...?",
+            "image"         :   "",
             "choices"       :   [
                                     "La matinée",
                                     "En journée",
@@ -15,8 +15,8 @@
             "explanation"   :   "C'est bizzare non ? Mais c'est que les données disent oh... hélas, il faut être en journée pour qu'il ait lieu un accident", /* Ici, tapez exactement l'intitulé de la réponse correcte plus haut (il faut que ce soit EXACTEMENT la même chaine de caractère */
         },
         {
-            "question"      :   "Se ?",
-            "image"         :   "K5.jpg",
+            "question"      :   "Selon vous, où as lieu les accidents de la route ?",
+            "image"         :   "",
             "choices"       :   [
                                     "Sur les route étroite",
                                     "Sur les autoroutes",
