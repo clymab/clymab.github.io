@@ -33,10 +33,20 @@
                                     "Ivresse avancée",
                                     "Fatigue chronique",
                                     "Endormissement exagéré",
-                                    "Je ne sais pas"
                                 ],
-            "correct"       :   "Je ne sais pas",
+            "correct"       :   "Fatigue chronique",
             "explanation"   :   "Je ne sais pas, car c'est comme ça...",
+        },
+
+        {
+             "question"      :   "Enfin, selon vous, quel est le sexe le plus susceptible d'avoir un accident ?",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Féminin ",
+                                    "Masculin",
+                                ],
+            "correct"       :   "Féminin",
+            "explanation"   :   "Haha, le meilleur toujours pour la fin. La majorité des accidents sont causés par les hommes (60% en 2016)",
         },
 
     ];
