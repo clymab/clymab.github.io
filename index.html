@@ -513,7 +513,7 @@
 				  var nbAccidentsByWeekday = myChart5.addSeries("Count", dimple.plot.bar);
 				  nbAccidentsByWeekday.aggregate = dimple.aggregateMethod.count;
 				  myChart5.draw();
-						
+				 /* 	
 				  var myChart6 = new dimple.chart(svg6, data);
 				  myChart6.setBounds(350, 10, 800, 170);
 				  var x = myChart6.addMeasureAxis("x", "Num_Acc");
@@ -575,9 +575,10 @@
 				  myChart11.addSeries("grav", dimple.plot.bar);
 				  myChart11.addLegend(360, 15, 710, 25, "right");
 				  myChart11.draw();
+				  */
 				};
 			  
-			  d3.csv("dataviz_df_2016.csv", drawNbAccidents);
+			  d3.csv("dataviz1.csv", drawNbAccidents);
 			  
 			};
   /*
