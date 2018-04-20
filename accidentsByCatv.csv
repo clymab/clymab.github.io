@@ -1,0 +1,25 @@
+catv,nbCatv
+Autobus,29
+Autocar,161
+Autre véhicule,43
+Bicyclette,683
+Cyclomoteur,436
+Engin spécial,26
+Motocyclette > 125 cm3,1851
+Motocyclette > 50 cm3 et <= 125 cm3,332
+PL > 3.5 T + remorque,140
+PL seul 3.5 T <= PTCA <= 7.5 T,40
+PL seul > 7.5 T,252
+Quad lourd > 50 cm3,85
+Quad léger <= 50 cm3,4
+Scooter < 50 cm3,634
+Scooter > 125 cm3,66
+Scooter > 50 cm3 et <= 125 cm3,81
+Tracteur agricole,129
+Tracteur routier + semi-remorque,122
+Tracteur routier seul,7
+Train,20
+Tramway,4
+VL seul,13968
+VU seul,1458
+Voiturette,137

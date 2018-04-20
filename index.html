@@ -480,105 +480,127 @@
 				  myChart2.draw();
 			  
 			  
-			  function drawNbAccidents(data){
+			  function drawLum(data){
 			  
 				  
 				  var myChart3 = new dimple.chart(svg3, data);
 				  myChart3.setBounds(350, 10, 800, 140);
-				  var x = myChart3.addMeasureAxis("x", "Num_Acc"); 
+				  var x = myChart3.addMeasureAxis("x", "nbLum"); 
 				  x.title = "";
 				  var y = myChart3.addCategoryAxis("y", "lum");
 				  y.title = "";
-				  var nbAccidentsByLum = myChart3.addSeries("Count", dimple.plot.bar);
-				  nbAccidentsByLum.aggregate = dimple.aggregateMethod.count;
-				  myChart3.draw();		
-				/*	
+				  myChart3.addSeries(null, dimple.plot.bar);
+				  myChart3.draw();
+				  
+				  function drawCol(data){
 				  var myChart4 = new dimple.chart(svg4, data);
 				  myChart4.setBounds(350, 10, 800, 170);
-				  var x = myChart4.addMeasureAxis("x", "Num_Acc");
+				  var x = myChart4.addMeasureAxis("x", "nbCol");
 				  x.title = "";			  
 				  var y = myChart4.addCategoryAxis("y", "col");
 				  y.title = "";
-				  var nbAccidentsByCol = myChart4.addSeries("Count", dimple.plot.bar);
-				  nbAccidentsByCol.aggregate = dimple.aggregateMethod.count;
+				  myChart4.addSeries("Count", dimple.plot.bar);
 				  myChart4.draw();
-						
-				  var myChart5 = new dimple.chart(svg5, data);
-				  myChart5.setBounds(350, 10, 800, 200);
-				  var x = myChart5.addMeasureAxis("x", "Num_Acc");
-				  x.title = "";			  
-				  var y = myChart5.addCategoryAxis("y", "weekday");
-				  y.addOrderRule(["dimanche", "samedi", "vendredi", "jeudi", "mercredi", "mardi", "lundi"]);
-				  y.title = "";
-				  var nbAccidentsByWeekday = myChart5.addSeries("Count", dimple.plot.bar);
-				  nbAccidentsByWeekday.aggregate = dimple.aggregateMethod.count;
-				  myChart5.draw();
-				  	
-				  var myChart6 = new dimple.chart(svg6, data);
-				  myChart6.setBounds(350, 10, 800, 170);
-				  var x = myChart6.addMeasureAxis("x", "Num_Acc");
-				  x.title = "";
-				  var y = myChart6.addCategoryAxis("y", "catr");
-				  y.title = "";
-				  var nbAccidentsByCatr = myChart6.addSeries("Count", dimple.plot.bar);
-				  nbAccidentsByCatr.aggregate = dimple.aggregateMethod.count;
-				  myChart6.draw();
-						
-				  var myChart7 = new dimple.chart(svg7, data);
-				  myChart7.setBounds(350, 10, 800, 500);
-				  var x = myChart7.addMeasureAxis("x", "Num_Acc");
-				  x.title = "";			  
-				  var y = myChart7.addCategoryAxis("y", "catv");
-				  y.title = "";
 				  
-				  var nbAccidentsByCatv = myChart7.addSeries("Count", dimple.plot.bar);
-				  nbAccidentsByCatv.aggregate = dimple.aggregateMethod.count;
-				  myChart7.draw();
-						
-				  var myChart8 = new dimple.chart(svg8, data);
-				  myChart8.setBounds(350, 40, 800, 280);
-				  var x = myChart8.addPctAxis("x", "Num_Acc");
-				  x.title = "";			  
-				  var y = myChart8.addCategoryAxis("y", "col");
-				  y.title = "";
-				  myChart8.addSeries("grav", dimple.plot.bar);
-				  myChart8.addLegend(400, 15, 710, 25, "right");
-				  myChart8.draw();
-						
-				  var myChart9 = new dimple.chart(svg9, data);
-				  myChart9.setBounds(350, 40, 800, 280);
-				  var x = myChart9.addPctAxis("x", "Num_Acc");
-				  x.title = "";			  
-				  var y = myChart9.addCategoryAxis("y", "catr");
-				  y.title = "";
-				  myChart9.addSeries("grav", dimple.plot.bar);
-				  myChart9.addLegend(400, 15, 710, 25, "right");
-				  myChart9.draw();
-						
-				  var myChart10 = new dimple.chart(svg10, data);
-				  myChart10.setBounds(350, 40, 800, 280);
-				  var x = myChart10.addPctAxis("x", "Num_Acc");
-				  x.title = "";			  
-				  var y = myChart10.addCategoryAxis("y", "catu");
-				  y.title = "";
-				  myChart10.addSeries("grav", dimple.plot.bar);
-				  myChart10.addLegend(400, 15, 710, 25, "right");
-				  myChart10.draw();
+					function drawWeekday(data){
+					  var myChart5 = new dimple.chart(svg5, data);
+					  myChart5.setBounds(350, 10, 800, 200);
+					  var x = myChart5.addMeasureAxis("x", "nbWeekday");
+					  x.title = "";			  
+					  var y = myChart5.addCategoryAxis("y", "weekday");
+					  y.addOrderRule(["dimanche", "samedi", "vendredi", "jeudi", "mercredi", "mardi", "lundi"]);
+					  y.title = "";
+					  myChart5.addSeries(null, dimple.plot.bar);
+					  myChart5.draw();
+					  
+					  function drawCatr(data){
+						  var myChart6 = new dimple.chart(svg6, data);
+						  myChart6.setBounds(350, 10, 800, 170);
+						  var x = myChart6.addMeasureAxis("x", "nbCatr");
+						  x.title = "";
+						  var y = myChart6.addCategoryAxis("y", "catr");
+						  y.title = "";
+						  myChart6.addSeries("Count", dimple.plot.bar);
+						  myChart6.draw();
+						  
+						  function drawCatv(data){
+							  var myChart7 = new dimple.chart(svg7, data);
+							  myChart7.setBounds(350, 10, 800, 500);
+							  var x = myChart7.addMeasureAxis("x", "nbCatv");
+							  x.title = "";			  
+							  var y = myChart7.addCategoryAxis("y", "catv");
+							  y.title = "";
+							  myChart7.addSeries(null, dimple.plot.bar);
+							  myChart7.draw();
+							  
+							  function drawColGrav(data){
+								  var myChart8 = new dimple.chart(svg8, data);
+								  myChart8.setBounds(350, 40, 800, 280);
+								  var x = myChart8.addPctAxis("x", "Num_Acc");
+								  x.title = "";			  
+								  var y = myChart8.addCategoryAxis("y", "col");
+								  y.title = "";
+								  myChart8.addSeries("grav", dimple.plot.bar);
+								  myChart8.addLegend(400, 15, 710, 25, "right");
+								  myChart8.draw();
+								  
+								  function drawCatrGrav(data){
+									  var myChart9 = new dimple.chart(svg9, data);
+									  myChart9.setBounds(350, 40, 800, 280);
+									  var x = myChart9.addPctAxis("x", "Num_Acc");
+									  x.title = "";			  
+									  var y = myChart9.addCategoryAxis("y", "catr");
+									  y.title = "";
+									  myChart9.addSeries("grav", dimple.plot.bar);
+									  myChart9.addLegend(400, 15, 710, 25, "right");
+									  myChart9.draw();
+									  
+									  function drawCatuGrav(data){
+										  var myChart10 = new dimple.chart(svg10, data);
+										  myChart10.setBounds(350, 40, 800, 280);
+										  var x = myChart10.addPctAxis("x", "Num_Acc");
+										  x.title = "";			  
+										  var y = myChart10.addCategoryAxis("y", "catu");
+										  y.title = "";
+										  myChart10.addSeries("grav", dimple.plot.bar);
+										  myChart10.addLegend(400, 15, 710, 25, "right");
+										  myChart10.draw();
+										  
+										  var filteredData = dimple.filterData(data, "catu", "Conducteur");
+										  var myChart11 = new dimple.chart(svg11, filteredData);
+										  myChart11.setBounds(300, 40, 800, 280);
+										  var x = myChart11.addCategoryAxis("x", "sexe");
+										  x.title = "";			  
+										  var y = myChart11.addPctAxis("y", "Num_Acc");
+										  y.title = "";
+										  myChart11.addSeries("grav", dimple.plot.bar);
+										  myChart11.addLegend(360, 15, 710, 25, "right");
+										  myChart11.draw();
+									  }
+									  d3.csv("dataviz5.csv", drawCatuGrav);
+								  }
+								  d3.csv("dataviz4.csv", drawCatrGrav);
+							  }
+							  d3.csv("dataviz3.csv", drawColGrav);
+						  }
+						  d3.csv("accidentsByCatv.csv", drawCatv);
+					  }
+					  d3.csv("accidentsByCatr.csv", drawCatr);
+					}
+					d3.csv("accidentsByWeekday.csv", drawWeekday);
+				  }
+				  d3.csv("accidentsByColType.csv", drawCol);
 				  
-				  var filteredData = dimple.filterData(data, "catu", "Conducteur");
-				  var myChart11 = new dimple.chart(svg11, filteredData);
-				  myChart11.setBounds(300, 40, 800, 280);
-				  var x = myChart11.addCategoryAxis("x", "sexe");
-				  x.title = "";			  
-				  var y = myChart11.addPctAxis("y", "Num_Acc");
-				  y.title = "";
-				  myChart11.addSeries("grav", dimple.plot.bar);
-				  myChart11.addLegend(360, 15, 710, 25, "right");
-				  myChart11.draw();
+				  
+			  };
+				  
+				  d3.csv("accidentsByLum.csv", drawLum);
+
+				  
+				/*
+				  
+				  
 				  */
-				};
-			  
-			  d3.csv("dataviz_1.csv", drawNbAccidents);
 			  
 			};
   /*
