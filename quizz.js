@@ -3,7 +3,7 @@
 
     var quiz = [
         {
-            "question"      :   "Selon vous, quel est le moment propice pour avoir un acident :D ? ",
+            "question"      :   "Selon vous, à quel moment de la journée ont généralement lieu les accidents de la route ? ",
             "image"         :   "",
             "choices"       :   [
                                     "Au crépuscule ou à l'aube",
