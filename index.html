@@ -8,6 +8,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Les accidents de la route</title>
+		
+		<link rel="stylesheet" type="text/css"
+			href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+		<link rel="stylesheet" type="text/css" href="css/sequences.css"/>
+		
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -18,8 +23,13 @@
 		<meta property="og:image:height" content="2372"> -->
 		<meta property="og:title" content="ACCIDENTS" />
 		<meta property="og:description" content="ACC" />
-		<script src="d3.v3.min.js"></script>
+		<script src="d3.min.js"></script>
 		<script src="dimple.v2.0.0.min.js"></script>
+		<script src="js/d3.js"></script>
+		<script src="//d3js.org/d3.v4.min.js"></script>
+		<script src="js/underscore.js"></script>
+		<script src="js/mapper.js"></script>
+		
 		
 		<script type="text/javascript"> 
 			var margin = 75,
@@ -32,9 +42,6 @@
 		</script>
 		
 		<style>	
-			h2{
-				text-align: center;
-			}
 			g.dimple-axis g.tick text{
 				font-size: 13px !important;
 			}
@@ -69,6 +76,41 @@
 			}
 			rect.dimple-autre-collision{
 				fill: rgba(128, 177, 211, 0.1) !important;
+			}
+			#tooltip {
+				color: white;
+				opacity: .9;
+				background: #333;
+				padding: 5px;
+				border: 1px solid lightgrey;
+				border-radius: 5px;
+				position: absolute;
+				z-index: 10;
+				visibility: hidden;
+				white-space: nowrap;
+				pointer-events: none;
+			}
+		    #circle circle {
+				fill: none;
+				pointer-events: all;
+			}
+			path.group {
+				fill-opacity: .8;
+			}
+			path.chord {
+				fill-opacity: .8;
+				stroke: #000;
+				stroke-width: .25px;
+			}
+			#circle:hover path.fade {
+				display: none;
+			}
+
+			h2 {
+				color: steelblue;
+				font-size: 1.6em;
+				padding-bottom: 10px;
+				text-align: center;
 			}
 		</style>
 		
@@ -121,7 +163,7 @@
 	
 	
 	
-	<body class="landing">
+	<body class="landing container">
 	
 		<!-- Header -->
 	<header id="header">
@@ -392,7 +434,7 @@
 		<h3 style="color:#9C5656" class="titre_section"> Titre 4 </h3>
 		<div class="container">
 		
-			<!-- Start viz 8, viz 9 and viz 10 -->
+			<!-- Start viz 11 -->
 			<script type="text/javascript">
 				d3.select("body")
 							.append("h2")
@@ -406,6 +448,158 @@
 								.attr('class','chart')
 								.attr('id', 'chart11');
 			</script>
+			
+			<!--
+			<h2>Informations générales sur les accidents de route en France (2010-2016)</h2> 
+
+			<div id="main">
+			  <div id="sequence"></div>
+			  <div id="chart">
+				<div id="explanation" style="visibility: hidden;">
+				  <span id="percentage"></span><br/>
+				  des accidents
+				</div>
+			  </div>
+			</div>
+
+			<script type="text/javascript" src="js/sequences.js"></script>
+			<script type="text/javascript">
+			  // Hack to make this example display correctly in an iframe on bl.ocks.org
+			  d3.select(self.frameElement).style("height", "700px");
+			</script>
+			-->
+			
+			<!-- Bruno vizz choc --> 
+				<div id="tooltip"></div>
+
+				<h2>Informations générales sur les types de collision (2016)</h2> 
+				  
+				<h3> Les différents types de collisions entre les véhicules sont décrit dans cette section :<br/>  </h3>
+					
+				<img src="Collisions.PNG" align="rigth" height="50%" width="50%"/>
+				<script>
+				  //*******************************************************************
+				  //  CREATE MATRIX AND MAP
+				  //*******************************************************************
+				  d3.csv('choc.csv', function (error, data) {
+					var mpr = chordMpr(data);
+
+					mpr
+					  .addValuesToMap('has')
+					  .setFilter(function (row, a, b) {
+						return (row.has === a.name && row.prefers === b.name)
+					  })
+					  .setAccessor(function (recs, a, b) {
+						if (!recs[0]) return 0;
+						return +recs[0].count;
+					  });
+					drawChords(mpr.getMatrix(), mpr.getMap());
+				  });
+				  //*******************************************************************
+				  //  DRAW THE CHORD DIAGRAM
+				  //*******************************************************************
+				  function drawChords (matrix, mmap) {
+					var w = 680, h = 600, r1 = h / 2, r0 = r1 - 100;
+
+					var fill = d3.scale.ordinal()
+						.domain(d3.range(4))
+						.range(["#FD3F92", "#1E7FCB", "#957244", "#F26223"]);
+
+					var chord = d3.layout.chord()
+						.padding(.02)
+						.sortSubgroups(d3.descending)
+						.sortChords(d3.descending);
+
+					var arc = d3.svg.arc()
+						.innerRadius(r0)
+						.outerRadius(r0 + 20);
+
+					var svg = d3.select("body").append("svg:svg")
+						.attr("width", w)
+						.attr("height", h)
+					  .append("svg:g")
+						.attr("id", "circle")
+						.attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
+
+						svg.append("circle")
+							.attr("r", r0 + 20);
+
+					var rdr = chordRdr(matrix, mmap);
+					chord.matrix(matrix);
+
+					var g = svg.selectAll("g.group")
+						.data(chord.groups())
+					  .enter().append("svg:g")
+						.attr("class", "group")
+						.on("mouseover", mouseover)
+						.on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+
+					g.append("svg:path")
+						.style("stroke", "black")
+						.style("fill", function(d) { return fill(d.index); })
+						.attr("d", arc);
+
+					g.append("svg:text")
+						.each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+						.attr("dy", ".35em")
+						.style("font-family", "helvetica, arial, sans-serif")
+						.style("font-size", "10px")
+						.attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+						.attr("transform", function(d) {
+						  return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+							  + "translate(" + (r0 + 26) + ")"
+							  + (d.angle > Math.PI ? "rotate(180)" : "");
+						})
+						.text(function(d) { return rdr(d).gname; });
+
+					  var chordPaths = svg.selectAll("path.chord")
+							.data(chord.chords())
+						  .enter().append("svg:path")
+							.attr("class", "chord")
+							.style("stroke", function(d) { return d3.rgb(fill(d.target.index)).darker(); })
+							.style("fill", function(d) { return fill(d.target.index); })
+							.attr("d", d3.svg.chord().radius(r0))
+							.on("mouseover", function (d) {
+							  d3.select("#tooltip")
+								.style("visibility", "visible")
+								.html(chordTip(rdr(d)))
+								.style("top", function () { return (d3.event.pageY - 100)+"px"})
+								.style("left", function () { return (d3.event.pageX - 100)+"px";})
+							})
+							.on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+
+					  function chordTip (d) {
+						var p = d3.format(".2%"), q = d3.format(",.3r")
+						return "Info Détaillée :<br/>"
+						  + p(d.svalue/d.stotal) + " (" + q(d.svalue) + ") des chocs : "
+						  + d.sname + " => " + d.tname
+						  + (d.sname === d.tname ? "": ("<br/>Tansdis que...<br/>"
+						  + p(d.tvalue/d.ttotal) + " (" + q(d.tvalue) + ") des chocs : "
+						  + d.tname + " => " + d.sname))
+					  }
+
+					  function groupTip (d) {
+						var p = d3.format(".1%"), q = d3.format(",.3r")
+						return "Info Globale :<br/>"
+							+ d.gname + " : " + q(d.gvalue) + "<br/>"
+							+ p(d.gvalue/d.mtotal) + " du Total (" + q(d.mtotal) + ")"
+					  }
+
+					  function mouseover(d, i) {
+						d3.select("#tooltip")
+						  .style("visibility", "visible")
+						  .html(groupTip(rdr(d)))
+						  .style("top", function () { return (d3.event.pageY - 80)+"px"})
+						  .style("left", function () { return (d3.event.pageX - 130)+"px";})
+
+						chordPaths.classed("fade", function(p) {
+						  return p.source.index != i
+							  && p.target.index != i;
+						});
+					  }
+				  }
+
+				</script>
 		
 		<div style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px"> 
 		<h4 style="color:#FFBF00"> Sous titre </h4>
@@ -609,6 +803,8 @@
     */
   d3.csv("nb_tues_1972_2016_3.csv", drawNbDead);
   </script>
+  
+  
 	
 
 		
