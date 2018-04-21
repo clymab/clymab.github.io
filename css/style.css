@@ -190,7 +190,7 @@ list-style-type: none;
 	
 	
 	.align-right-subtitle {
-		margin-left: 800px
+		margin-left: 600px
 	}
 	}
 
@@ -1215,137 +1215,6 @@ list-style-type: none;
 /* ============================================================================================================================
 == BUBBLE WITH A RIGHT-ANGLED TRIANGLE
 ** ============================================================================================================================ */
-
-/* THE SPEECH BUBBLE
-------------------------------------------------------------------------------------------------------------------------------- */
-
-.triangle-right {
-  position:relative;
-  padding:15px;
-  margin:1em 0 3em;
-  color:black;
-  /*background:#075698; /* default background for browsers without gradient support */
-  /*css3 */
-  /*background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
-  background:-moz-linear-gradient(#2e88c4, #075698);
-  background:-o-linear-gradient(#2e88c4, #075698);
-  background:linear-gradient(#2e88c4, #075698);*/
-  background: transparent;
-  -webkit-border-radius:10px;
-  -moz-border-radius:10px;
-  border-radius:10px;
-}
-
-
-
-/* Variant : for left positioned triangle
------------------------------------------- */
-/* Fillon  vert-jaune*/
-.triangle-right.left {
-  margin-left:40px;
-  /*background: #d1e231;*/
-  border: 5px solid #d1e231;
-	
-/*box-shadow: 6px 6px 6px black;*/
-}
-/* Hamon Violet-marron*/
-.triangle-right.left0 {
-  margin-left:40px;
- /* background:#933d41;*/
-   /*  box-shadow: 6px 6px 6px black;*/
-border:5px solid #933d41;
-
-
-}
-/* Le pen orange */
-.triangle-right.left2 {
-  margin-left:40px;
- /* background:#e48400;*/
-  /*box-shadow: 6px 6px 6px black;*/
-	border: 5px solid #e48400;
-}
-
-/* Mélenchon bleu canard */
-.triangle-right.left3{
-  margin-left:40px;
-  /*background:#009688;*/
-  /*box-shadow: 6px 6px 6px black;*/
-	border: 5px solid #009688;
-}
-
-/* Macron bleu */
-.triangle-right.left4{
-  margin-left:40px;
-  /*background:#0F52Ba;*/
-  /*box-shadow: 6px 6px 6px black;*/
-	border: 5px solid #0f52ba;
-}
-
-
-/* THE TRIANGLE
-------------------------------------------------------------------------------------------------------------------------------- */
-
-.triangle-right:after {
-  content:"";
-  position:absolute;
-  bottom:-20px; /* value = - border-top-width - border-bottom-width */
-  left:50px; /* controls horizontal position */
-  border-width:20px 0 0 20px; /* vary these values to change the angle of the vertex */
-  border-style:solid;
-  border-color:white transparent;
-  /* reduce the damage in FF3.0 */
-  display:block;
-  width:0;
-}
-
-
-
-/* Variant : left
------------------------------------------- */
-
-/*Fillon*/
-.triangle-right.left:after {
-  top:16px;
-  left:-40px; /* value = - border-left-width - border-right-width */
-  bottom:auto;
-  border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
-  border-color:transparent #d1e231;
-}
-
-/*Hamon*/
-.triangle-right.left0:after {
-  top:16px;
-  left:-40px; /* value = - border-left-width - border-right-width */
-  bottom:auto;
-  border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
-  border-color:transparent #933d41;
-}
-/*Le pen */
-.triangle-right.left2:after {
-  top:16px;
-  left:-40px; /* value = - border-left-width - border-right-width */
-  bottom:auto;
-  border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
-  border-color:transparent #e48400 ;
-}
-
-/* Mélenchon*/
-.triangle-right.left3:after {
-  top:16px;
-  left:-40px; /* value = - border-left-width - border-right-width */
-  bottom:auto;
-  border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
-  border-color:transparent #009688;
-}
-
-/* Macron*/
-.triangle-right.left4:after {
-  top:16px;
-  left:-40px; /* value = - border-left-width - border-right-width */
-  bottom:auto;
-  border-width:15px 40px 0 0; /* vary these values to change the angle of the vertex */
-  border-color:transparent #0F52Ba;
-}
 
 
 
