@@ -3,7 +3,7 @@
 
     var quiz = [
         {
-            "question"      :   "Selon vous, à quel moment de la journée ont généralement lieu les accidents de la route ? ",
+            "question"      :   "Selon vous, à quel moment de la journée les accidents de la route ont généralement lieu ? ",
             "image"         :   "",
             "choices"       :   [
                                     "Au crépuscule ou à l'aube",
@@ -14,7 +14,7 @@
             "explanation"   :   "C'est bizzare non ? Evidemment que non, contrairement aux idées reçues, la majorité des accidents ont lieu en journée. En effet, en 2016, 2/3 des accidents de la route se sont produit en plein jour et 4/5 par beau temps (source: fichier BAAC).",
         },
         {
-            "question"      :   "Selon vous, où ont lieu les accidents de la route ?",
+            "question"      :   "Selon vous, où ont lieu la plupart des accidents de la route ?",
             "image"         :   "",
             "choices"       :   [
                                     "Sur les routes nationales",
@@ -38,7 +38,7 @@
         },
 
         {
-             "question"      :   "Une dernière pour la fin, dans quel état se trouve les victimes des accidents?",
+             "question"      :   "Une dernière pour la fin, dans quel état se trouvait la majorité les responsables des accidents?",
             "image"         :   "",
             "choices"       :   [
                                     "Ivresse avancée",
