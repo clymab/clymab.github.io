@@ -190,7 +190,7 @@ list-style-type: none;
 	
 	
 	.align-right-subtitle {
-		margin-left: 600px
+		margin-left: 580px
 	}
 	}
 
@@ -1074,7 +1074,7 @@ list-style-type: none;
 		padding: 6em 0em 4em;
 	}
 
-/* Première couleur choisie: bleu gris = rgba(174,194,203,0.5) à rendre un peu transparent */
+/* Première couleur */
 
 		.wrapper.style1 {
 			
@@ -1210,12 +1210,7 @@ list-style-type: none;
 					margin-left: 0;
 					padding-left: 0;
 				}
-
-
-/* ============================================================================================================================
-== BUBBLE WITH A RIGHT-ANGLED TRIANGLE
-** ============================================================================================================================ */
-
+/*Paraxify*/
 
 
 .paraxify.intermede-1{
@@ -4386,3 +4381,4 @@ height:100%;
   background: #ff6600;
   color: white;
 }
+
