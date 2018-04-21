@@ -1,0 +1,57 @@
+has,prefers,count
+"Arrière droit","Arrière",154
+"Arrière droit","Arrière droit",196
+"Arrière droit","Arrière gauche",243
+"Arrière droit","Avant",96
+"Arrière droit","Avant gauche",66
+"Arrière droit","Inconnu",3
+"Arrière gauche","Arrière",242
+"Arrière gauche","Arrière droit",380
+"Arrière gauche","Arrière gauche",337
+"Arrière gauche","Avant",85
+"Arrière gauche","Avant gauche",77
+"Arrière gauche","Inconnu",2
+"Arrière","Arrière",1949
+"Arrière","Avant",72
+"Arrière","Avant gauche",100
+"Arrière","Chocs multiples",3
+"Arrière","Inconnu",11
+"Avant droit","Arrière",264
+"Avant droit","Avant",844
+"Avant droit","Avant droit",2845
+"Avant droit","Avant gauche",277
+"Avant droit","Chocs multiples,2
+"Avant droit","Inconnu",35
+"Avant gauche","Arrière",92
+"Avant gauche","Avant",2916
+"Avant gauche","Avant gauche",4604
+"Avant gauche","Chocs multiples",6
+"Avant gauche","Inconnu",40
+"Avant","Arrière",824
+"Avant","Avant",12260
+"Avant","Avant gauche",776
+"Avant","Chocs multiples,13
+"Avant","Inconnu",60
+"Chocs multiples","Arrière",10
+"Chocs multiples","Avant",29
+"Chocs multiples","Avant gauche",26
+"Chocs multiples","Chocs multiples,404
+"Chocs multiples","Inconnu",3
+"Côté droit","Arrière",10
+"Côté droit","Avant",238
+"Côté droit","Avant gauche",61
+"Côté droit","Chocs multiples",5
+"Côté droit","Côté droit",479
+"Côté droit","Côté gauche",1214
+"Côté droit","Inconnu",7
+"Côté gauche","Arrière",13
+"Côté gauche","Avant",288
+"Côté gauche","Avant gauche",52
+"Côté gauche","Côté droit",1525
+"Côté gauche","Côté gauche",840
+"Côté gauche","Inconnu",8
+"Inconnu","Arrière",25
+"Inconnu","Avant",279
+"Inconnu","Avant gauche",152
+"Inconnu","Chocs multiples",2
+"Inconnu","Inconnu",2785
