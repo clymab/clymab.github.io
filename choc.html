@@ -3,19 +3,58 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/sequences.css"/>
-    <div id="tooltip"></div>
-    <script src="js/d3.js"></script>
-    <script src="js/underscore.js"></script>
-    <script src="js/mapper.js"></script>
+    <link rel="stylesheet" type="text/css" href="sequences.css"/>
+    <style>
+      #tooltip {
+        color: white;
+        opacity: .9;
+        background: #333;
+        padding: 5px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        position: absolute;
+        z-index: 10;
+        visibility: hidden;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+      #circle circle {
+        fill: none;
+        pointer-events: all;
+      }
+      path.group {
+        fill-opacity: .8;
+      }
+      path.chord {
+        fill-opacity: .8;
+        stroke: #000;
+        stroke-width: .25px;
+      }
+      #circle:hover path.fade {
+        display: none;
+      }
+
+      h2 {
+        color: steelblue;
+        font-size: 1.6em;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
+    <div id="tooltip"></div>
+    <script src="d3.js"></script>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script src="underscore.js"></script>
+    <script src="mapper.js"></script>
+
     <h2>Informations générales sur les types de collision (2016)</h2> 
       
     <h3> Les différents types de collisions entre les véhicules sont décrit dans cette section :<br/>  </h3>
-    <img src="Collisions.PNG" align="center" height="30%" width="40%" >
-
-     <script>
+        
+    <img src="Collisions.PNG" align="rigth" height="50%" width="50%"/>
+    <script>
       //*******************************************************************
       //  CREATE MATRIX AND MAP
       //*******************************************************************
@@ -138,6 +177,5 @@
       }
 
     </script>
-    
   </body>
 </html>
