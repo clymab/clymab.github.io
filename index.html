@@ -25,7 +25,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-117907715-1');
 </script>
 
@@ -36,7 +35,6 @@
 			var margin = 75,
 				  width = 1400 - margin,
 				  height = 350 - margin;
-
 			var margin2 = 75,
 				  width2 = 1400 - margin,
 				  height2 = 550 - margin;
@@ -45,6 +43,9 @@
 		<style>
 			h2{
 				text-align: center;
+			}
+			svg g.chart{
+				margin: 0 auto;
 			}
 			g.dimple-axis g.tick text{
 				font-size: 13px !important;
@@ -97,9 +98,9 @@
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
 		<script type="text/javascript" src="script4.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
-		
-		
+
+
+
 <!--		<script type="text/javascript" src="js/jquery.min.js"></script> -->
 		<script type="text/javascript" src="js/skel.min.js"></script>
 		<script type="text/javascript" src="js/skel-layers.min.js"></script>
@@ -197,10 +198,30 @@
 
 
 	<section id="one" class="wrapper style12 align-center">
-		<h3 style="color:#9C5656" class="titre_section"> La sécurité routière, que savez-vous ? </h3>
+		<center>
+		<h3 style="color:#9C5656" class="titre_section"> LA SECURITE ROUTIERE, QUE SAVEZ-VOUS ? </h3>
+		</center>
 		<div class="container">
 
-		<!-- Start viz 1 and viz 2 -->
+
+		<div style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+		<div style="color:#000000; text-align: justify;">
+ 			<h5>«La sécurité routière c’est l’affaire de tous». Sans vouloir faire l’apologie du contraire, force est de remarquer que les idées reçues, en matière de sécurité routière, sont souvent fausses. En effet, on imagine qu'un nombre important d'accidents est causé par les mauvaises conditions (peu de visibilité, chaussée glissante, conducteur alcoolisé…). Parce que la circulation automobile et son corollaire, l’insécurité routière est le quotidien de tous, nous avons tous en tête des « clichés », des lieux communs sur ce qui peut expliquer l’hécatombe que nous connaissons sur nos routes. Le dicton « chauffard au volant, la mort au tournant» a fait partie pendant longtemps de ce type de cliché qui perdure encore. Cependant, il est important de notifier qu’en plus de 40 ans, nos habitudes de conduite, notre perception de la route et les règles du Code de la route ont beaucoup évolué. Les chiffres des accidents de la route donnent toute la mesure du chemin parcouru. </h5>
+
+			<h6> Les grandes réformes du code de la route ont eu des impacts très significatives sur le nombre de mortalité en France. En 1972, on déplorait 18 034 décès sur nos routes et 386 874 blessés. En 2011, 3 963 personnes ont été tuées et 81 251 personnes ont été blessées1. Dans le même temps, le trafic routier a été multiplié par 2,4. Entre 1972 et 2012, ce sont donc 320 000 vies qui ont été épargnées (à adapter à notre premier graphique... J'ai du mal à voir les graphiques sur mon ordi, c'est un peu trop lent et je ne vois pas tous les graphiques).</h6>
+
+			<h4 style="color:#9C5656" class="titre_section"> Des décennies de mesures </h4>
+
+	<iframe src="https://www.preceden.com/timelines/374901/embed" width="100%" height="480" frameborder="0">
+	<a href="https://www.preceden.com" target="_top">Preceden Timeline Maker</a>
+	</iframe>
+
+			<h4 style="color:#9C5656" class="titre_section" align-rigth>45 ans plus tard quels résultats ? </h4>
+		</div>
+		</div>
+		</div>
+
+				<!-- Start viz 1 and viz 2 -->
 		<script type="text/javascript">
 			d3.select("body")
 					.append("h2")
@@ -213,40 +234,67 @@
 						.attr('class','chart')
 						.attr('id', 'chart1');
 
-				  d3.select("body")
-					.append("h2")
-					.text("Nombre de personnes mortes par accidents par mois");
-
-				  var svg2 = d3.select("body")
-					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
-					.append('g')
-						.attr('class','chart')
-						.attr('id', 'chart2');
 		</script>
 		<!-- End -->
 
-
-		<div style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
-		<h4 style="color:#0B3B39"> Sous titre </h4>
-		<div style="color:#000000; text-align: justify;">
- 			<h5>«La sécurité routière c’est l’affaire de tous». Sans vouloir faire l’apologie du contraire, force est de remarquer que les idées reçues, en matière de sécurité routière, sont souvent fausses. En effet, on imagine qu'un nombre important d'accidents est causé par les mauvaises conditions (peu de visibilité, chaussée glissante, conducteur alcoolisé…). Parce que la circulation automobile et son corollaire, l’insécurité routière est le quotidien de tous, nous avons tous en tête des « clichés », des lieux communs sur ce qui peut expliquer l’hécatombe que nous connaissons sur nos routes. Le dicton « chauffard au volant, la mort au tournant» a fait partie pendant longtemps de ce type de cliché qui perdure encore. Cependant, il est important de notifier qu’en plus de 40 ans, nos habitudes de conduite, notre perception de la route et les règles du Code de la route ont beaucoup évolué. Les chiffres des accidents de la route donnent toute la mesure du chemin parcouru. </h5>
-
-			<h6> Les grandes réformes du code de la route ont eu des impacts très significatives sur le nombre de mortalité en France. En 1972, on déplorait 18 034 décès sur nos routes et 386 874 blessés. En 2011, 3 963 personnes ont été tuées et 81 251 personnes ont été blessées1. Dans le même temps, le trafic routier a été multiplié par 2,4. Entre 1972 et 2012, ce sont donc 320 000 vies qui ont été épargnées (à adapter à notre premier graphique... J'ai du mal à voir les graphiques sur mon ordi, c'est un peu trop lent et je ne vois pas tous les graphiques).</h6>
-
-<iframe src="https://www.preceden.com/timelines/374714/embed" width="100%" height="561" frameborder="0">
-  <a href="https://www.preceden.com" target="_top">Preceden Timeline Maker</a>
-</iframe>
-		</div>
-		</div>
-		</div>
 	</section>
 
 
 <div class="paraxify intermede-1" style="background-position: center center;"> </div>
 
 
+<section id="quizz" class="wrapper style3 align-center">
+		<div style="font-size: 100px;">
+		</div>
+		<center>
+		<h3 style="color:#9C5656"> TESTEZ VOS CONNAISSANCES ! </h3>
+		</center>
+
+		<div class="container">
+
+		<!-- Start viz 8, viz 9 and viz 10 -->
+		<script type="text/javascript">
+			d3.select("body")
+					.append("h2")
+					.text("Type de collision et gravité des accidents");
+			var svg8 = d3.select("body")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart8');
+			d3.select("body")
+					.append("h2")
+					.text("Type de route et gravité des accidents");
+			var svg9 = d3.select("body")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart9');
+			d3.select("body")
+					.append("h2")
+					.text("Gravité du choc et catégorie de l'usager");
+			var svg10 = d3.select("body")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart10');
+		</script>
+		<!-- End -->
+
+
+		 <div id="frame" role="content"></div>
+		</div>
+
+
+<div class="paraxify intermede-2" style="background-position: center center;"> </div>
+
+</section>
 
 	<section id="two" class="wrapper style12 align-center">
 		<div style="font-size: 100px;">
@@ -254,12 +302,27 @@
 		<h3 style="color:#9C5656" class="titre_section"> Sécurité routière : les femmes conduisent mieux que les hommes.</h3>
 		<div class="container">
 
+		<!-- Start viz 2 -->
+			<script type="text/javascript">
+				d3.select("body")
+					.append("h2")
+					.text("Nombre de personnes mortes par accidents par mois");
+				  var svg2 = d3.select("body")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart2');
+			</script>
+		<!-- End -->
+
+
 		<!-- Start viz 3, viz 4, viz 5, viz 6 and viz 7 -->
 		<script type="text/javascript">
 				d3.select("body")
 					.append("h2")
 					.text("Nombre d'accidents en fonction des conditions d'éclairage");
-
 				var svg3 = d3.select("body")
 					.append("svg")
 					  .attr("width", width + margin)
@@ -267,11 +330,9 @@
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart3');
-
 				d3.select("body")
 					.append("h2")
 					.text("Nombre d'accidents en fonction du type de collisions");
-
 				var svg4 = d3.select("body")
 					.append("svg")
 					  .attr("width", width + margin)
@@ -279,11 +340,9 @@
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart4');
-
 				d3.select("body")
 					.append("h2")
 					.text("Nombre d'accidents en fonction du jour de la semaine");
-
 				var svg5 = d3.select("body")
 					.append("svg")
 					  .attr("width", width + margin)
@@ -291,11 +350,9 @@
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart5');
-
 				d3.select("body")
 					.append("h2")
 					.text("Nombre d'accidents en fonction du type de route");
-
 				var svg6 = d3.select("body")
 					.append("svg")
 					  .attr("width", width + margin)
@@ -303,11 +360,9 @@
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart6');
-
 				d3.select("body")
 					.append("h2")
 					.text("Nombre d'accidents en fonction du type de véhicule");
-
 				var svg7 = d3.select("body")
 					.append("svg")
 					  .attr("width", width2 + margin2)
@@ -315,7 +370,6 @@
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart7');
-
 		</script>
 		<!-- End -->
 
@@ -339,72 +393,7 @@
 
 
 
-<div class="paraxify intermede-2" style="background-position: center center;"> </div>
 
-<section id="quizz" class="wrapper style3 align-center">
-		<div style="font-size: 100px;">
-		</div>
-		<h3 style="color:#9C5656"> Testez vos connaissances ! </h3>
-
-		<div class="container">
-
-		<!-- Start viz 8, viz 9 and viz 10 -->
-		<script type="text/javascript">
-			d3.select("body")
-					.append("h2")
-					.text("Type de collision et gravité des accidents");
-
-			var svg8 = d3.select("body")
-					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
-					.append('g')
-						.attr('class','chart')
-						.attr('id', 'chart8');
-
-			d3.select("body")
-					.append("h2")
-					.text("Type de route et gravité des accidents");
-
-			var svg9 = d3.select("body")
-					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
-					.append('g')
-						.attr('class','chart')
-						.attr('id', 'chart9');
-
-			d3.select("body")
-					.append("h2")
-					.text("Gravité du choc et catégorie de l'usager");
-
-			var svg10 = d3.select("body")
-					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
-					.append('g')
-						.attr('class','chart')
-						.attr('id', 'chart10');
-		</script>
-		<!-- End -->
-
-
-		 <div id="frame" role="content"></div>
-		</div>
-	
-	
-<!--
-	Graphes Lina 
--->
-		
-<script id="infogram_0_90cf269b-b938-47f0-a272-cced0c9dbea4" title="Pictorial" src="https://e.infogram.com/js/dist/embed.js?FPD" type="text/javascript"></script>
-<div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/90cf269b-b938-47f0-a272-cced0c9dbea4" style="color:#989898!important;text-decoration:none!important;" target="_blank">Pictorial</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
-
-
-<script id="infogram_0_c02cd7b7-996f-46a2-ac93-c0aa136a70cc" title="Comparison White" src="https://e.infogram.com/js/dist/embed.js?6nn" type="text/javascript"></script>
-<div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/c02cd7b7-996f-46a2-ac93-c0aa136a70cc" style="color:#989898!important;text-decoration:none!important;" target="_blank">Comparison White</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
-	
-</section>
 
 
 
@@ -412,20 +401,33 @@
 
 <div class="paraxify intermede-3" style="background-position: center center;"> </div>
 
-
-
 	<section id="four" class="wrapper style12 align-center">
 		<div style="font-size: 100px;">
 		</div>
-		<h3 style="color:#9C5656" class="titre_section"> Titre 4 </h3>
+		<h3 style="color:#9C5656" class="titre_section"> Clichés, préjugés que nous disent les données ? </h3>
+
+		<h4 style="color:#FFBF00"> Cliché n°1 "Les femmes conduisent moins bien que les hommes" </h4>
+		<div style="color:#000000; text-align: justify;">
+			<h5>Des études statistiques du fichier BAAC montrent que les femmes ont une conduite au volant moins à risque que les hommes. Pourtant, malgré l'évidence des chiffres, les clichés sur les conductrices ont la vie dure. Plus dangereuses, moins attentionnées et moins à l'aise que les hommes sur la route, les femmes seraient de mauvaises conductrices à en croire les stéréotypes répandus dans la société et largement entretenus par des vidéos sur le net. Puisque les chiffres parlent d'eux-mêmes, voici ce qu’ils disent :
+			</h5>
+		</div>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/Eduq0wbEXoo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
 		<div class="container">
+
+<!--
+	Graphes Lina
+-->
+
+<script id="infogram_0_90cf269b-b938-47f0-a272-cced0c9dbea4" title="Pictorial" src="https://e.infogram.com/js/dist/embed.js?7SA" type="text/javascript"></script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/90cf269b-b938-47f0-a272-cced0c9dbea4" style="color:#989898!important;text-decoration:none!important;" target="_blank">Pictorial</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+<script id="infogram_0_c02cd7b7-996f-46a2-ac93-c0aa136a70cc" title="Comparison White" src="https://e.infogram.com/js/dist/embed.js?UCW" type="text/javascript"></script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/c02cd7b7-996f-46a2-ac93-c0aa136a70cc" style="color:#989898!important;text-decoration:none!important;" target="_blank">Comparison White</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
 
 			<!-- Start viz 8, viz 9 and viz 10 -->
 			<script type="text/javascript">
 				d3.select("body")
 							.append("h2")
 							.text("Sexe du conducteur et gravité des accidents");
-
 				var svg11 = d3.select("body")
 							.append("svg")
 							  .attr("width", width + margin)
@@ -448,41 +450,32 @@
 	</section>
 
 	<script type="text/javascript">
-
 		  // Draw the graphs based on 'nb of accidents' data
 		  function drawNbDead(data) {
-
 		  /*
 			D3.js setup code
 		  */
 				"use strict";
 			  //debugger;
-
 		  /*
 			Dimple.js Chart construction code
 		  */
-
 				  var myChart1 = new dimple.chart(svg1, data);
-
 				  var x = myChart1.addTimeAxis("x", "an");
 				  x.dateParseFormat = "%Y";
 				  x.tickFormat = "%Y";
 				  x.timeInterval = 4;
 				  x.title = "";
-
 				  var y1 = myChart1.addMeasureAxis("y", "nb_tues");
 				  //y.useLog = true;
 				  //y.logBase = 2;
 				  y1.title = "";
-
 				  myChart1.addSeries("Nombre de morts", dimple.plot.line, [x, y1]);
 				  myChart1.addSeries("Nombre de morts", dimple.plot.scatter, [x, y1]);
-
 				  var y2 = myChart1.addMeasureAxis("y", "pop");
 				  //y.useLog = true;
 				  //y.logBase = 2;
 				  y2.title = "";
-
 				  var popSeriesLine = myChart1.addSeries("Population", dimple.plot.line, [x, y2]);
 				  var popSeriesScatter = myChart1.addSeries("Population", dimple.plot.scatter, [x, y2]);
 				  popSeriesLine.aggregate = dimple.aggregateMethod.avg;
@@ -493,7 +486,6 @@
 					.style("stroke", "rgb(128, 177, 211)");
 				  y2.shapes.select("g.dimple-axis path.domain")
 					.style("stroke", "rgb(251, 128, 114)");
-
 				  var myChart2 = new dimple.chart(svg2, data);
 				  myChart2.setBounds(350, 10, 800, 250);
 				  var x = myChart2.addMeasureAxis("x", "nb_tues");
@@ -501,34 +493,28 @@
 				  var y = myChart2.addCategoryAxis("y", "mois");
 				  y.title = "";
 				  y.addOrderRule(["decembre", "novembre", "octobre", "septembre", "août", "juillet", "juin", "mai", "avril", "mars", "fevrier", "janvier"]);
-
 				  myChart2.addSeries(null, dimple.plot.bar);
-
 				  myChart2.draw();
-
-
 			  function drawLum(data){
-
-
 				  var myChart3 = new dimple.chart(svg3, data);
 				  myChart3.setBounds(350, 10, 800, 140);
 				  var x = myChart3.addMeasureAxis("x", "nbLum");
 				  x.title = "";
 				  var y = myChart3.addCategoryAxis("y", "lum");
+				  y.addOrderRule("nbLum");
 				  y.title = "";
 				  myChart3.addSeries(null, dimple.plot.bar);
 				  myChart3.draw();
-
 				  function drawCol(data){
 				  var myChart4 = new dimple.chart(svg4, data);
 				  myChart4.setBounds(350, 10, 800, 170);
 				  var x = myChart4.addMeasureAxis("x", "nbCol");
 				  x.title = "";
 				  var y = myChart4.addCategoryAxis("y", "col");
+				  y.addOrderRule("nbCol");
 				  y.title = "";
 				  myChart4.addSeries("Count", dimple.plot.bar);
 				  myChart4.draw();
-
 					function drawWeekday(data){
 					  var myChart5 = new dimple.chart(svg5, data);
 					  myChart5.setBounds(350, 10, 800, 200);
@@ -539,27 +525,26 @@
 					  y.title = "";
 					  myChart5.addSeries(null, dimple.plot.bar);
 					  myChart5.draw();
-
 					  function drawCatr(data){
 						  var myChart6 = new dimple.chart(svg6, data);
 						  myChart6.setBounds(350, 10, 800, 170);
 						  var x = myChart6.addMeasureAxis("x", "nbCatr");
 						  x.title = "";
 						  var y = myChart6.addCategoryAxis("y", "catr");
+						  y.addOrderRule("nbCatr");
 						  y.title = "";
 						  myChart6.addSeries("Count", dimple.plot.bar);
 						  myChart6.draw();
-
 						  function drawCatv(data){
 							  var myChart7 = new dimple.chart(svg7, data);
 							  myChart7.setBounds(350, 10, 800, 500);
 							  var x = myChart7.addMeasureAxis("x", "nbCatv");
 							  x.title = "";
 							  var y = myChart7.addCategoryAxis("y", "catv");
+							  y.addOrderRule("nbCatv");
 							  y.title = "";
 							  myChart7.addSeries(null, dimple.plot.bar);
 							  myChart7.draw();
-
 							  function drawColGrav(data){
 								  var myChart8 = new dimple.chart(svg8, data);
 								  myChart8.setBounds(350, 40, 800, 280);
@@ -570,7 +555,6 @@
 								  myChart8.addSeries("grav", dimple.plot.bar);
 								  myChart8.addLegend(400, 15, 710, 25, "right");
 								  myChart8.draw();
-
 								  function drawCatrGrav(data){
 									  var myChart9 = new dimple.chart(svg9, data);
 									  myChart9.setBounds(350, 40, 800, 280);
@@ -581,7 +565,6 @@
 									  myChart9.addSeries("grav", dimple.plot.bar);
 									  myChart9.addLegend(400, 15, 710, 25, "right");
 									  myChart9.draw();
-
 									  function drawCatuGrav(data){
 										  var myChart10 = new dimple.chart(svg10, data);
 										  myChart10.setBounds(350, 40, 800, 280);
@@ -592,7 +575,6 @@
 										  myChart10.addSeries("grav", dimple.plot.bar);
 										  myChart10.addLegend(400, 15, 710, 25, "right");
 										  myChart10.draw();
-
 										  var filteredData = dimple.filterData(data, "catu", "Conducteur");
 										  var myChart11 = new dimple.chart(svg11, filteredData);
 										  myChart11.setBounds(300, 40, 800, 280);
@@ -617,17 +599,10 @@
 					d3.csv("accidentsByWeekday.csv", drawWeekday);
 				  }
 				  d3.csv("accidentsByColType.csv", drawCol);
-
-
 			  };
-
 				  d3.csv("accidentsByLum.csv", drawLum);
-
 				/*
-
-
 				  */
-
 			};
   /*
     Use D3 (not dimple.js) to load the TSV file
@@ -648,29 +623,19 @@
 							<ul class="icons">
 								<li> <a href="mailto:bruno.abilou@ensae.fr" class="fa fa-envelope""><span class="label"></span></a></li>Bruno Abilou<br>
 								<li> <a href="mailto:youssouf.camara@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li>  Youssouf Camara <br>
-
 								<li> <a href="mailto:lina.cristancho@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li> Lina Cristancho <br>
-
 								<li> <a href="mailto:geremie.djohossou@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li>  Geremie Djohossou <br>
-
 								<li> <a href="mailto:charlotte.psaquier@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li>  Charlotte Pasquier <br>
 							</ul>
-
-
 						</section>
 						<section class="6u$ 12u$(medium) 12u$(small)">
 							<h3 class="animated slideInRight "> Et les données dans tout ça ? </h3>
 							<p>Les données utilisées pour la réalisation des graphiques proviennent du fichier <a href="https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/r">BAAC</a>
 							mis à jour annuellement par l’Observatoire national interministériel de la sécurité routière. <br>
 							L'ensemble des données démographiques utilisées sont disponibles sur le site de <a href="https://www.insee.fr">l'insee</a>.</p>
-
-
 						</section>
 					</div
 				</div>
-
-
 			</footer>
-
 	</body>
 </html>
