@@ -491,6 +491,61 @@
 			</div>
 			</div>
 
+			<!-- Start viz 3, viz 4, viz 5, viz 6 and viz 7 -->
+			<script type="text/javascript">
+					d3.select("body")
+						.append("h2")
+						.text("Nombre d'accidents en fonction des conditions d'éclairage");
+					var svg3 = d3.select("body")
+						.append("svg")
+							.attr("width", width + margin)
+							.attr("height", height + margin)
+						.append('g')
+							.attr('class','chart')
+							.attr('id', 'chart3');
+					d3.select("body")
+						.append("h2")
+						.text("Nombre d'accidents en fonction du type de collisions");
+					var svg4 = d3.select("body")
+						.append("svg")
+							.attr("width", width + margin)
+							.attr("height", height + margin)
+						.append('g')
+							.attr('class','chart')
+							.attr('id', 'chart4');
+					d3.select("body")
+						.append("h2")
+						.text("Nombre d'accidents en fonction du jour de la semaine");
+					var svg5 = d3.select("body")
+						.append("svg")
+							.attr("width", width + margin)
+							.attr("height", height + margin)
+						.append('g')
+							.attr('class','chart')
+							.attr('id', 'chart5');
+					d3.select("body")
+						.append("h2")
+						.text("Nombre d'accidents en fonction du type de route");
+					var svg6 = d3.select("body")
+						.append("svg")
+							.attr("width", width + margin)
+							.attr("height", height + margin)
+						.append('g')
+							.attr('class','chart')
+							.attr('id', 'chart6');
+					d3.select("body")
+						.append("h2")
+						.text("Nombre d'accidents en fonction du type de véhicule");
+					var svg7 = d3.select("body")
+						.append("svg")
+							.attr("width", width2 + margin2)
+							.attr("height", height2 + margin2)
+						.append('g')
+							.attr('class','chart')
+							.attr('id', 'chart7');
+			</script>
+			<!-- End -->
+
 
 
 			<div style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
@@ -498,7 +553,7 @@
 				<h4 style="color:#9C5656" class="titre_section"> Cliché n°3 "les accidents se produisent les jours de travail et période de fête"</h4>
 			<div style="color:#000000; text-align: justify;">
 				<h5>
-					Contrairement à ce qu'on pourrait penser, les accidents se produisent généralement les weekends (y compris les vendredis soirs), surtout pendant le beau temps c'est-à-dire pendant l'été la période d'estivale.	</h5>
+					Contrairement à ce qu'on pourrait penser, les accidents se produisent généralement les weekends (y compris les vendredis soirs), surtout pendant le beau temps c'est-à-dire pendant l'été la période d'estivale.</h5>
 			</div>
 			</div>
 			</div>
