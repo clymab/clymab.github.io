@@ -230,16 +230,7 @@
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart1');
-				  d3.select("body")
-					.append("h2")
-					.text("Nombre de personnes mortes par accidents par mois");
-				  var svg2 = d3.select("body")
-					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
-					.append('g')
-						.attr('class','chart')
-						.attr('id', 'chart2');
+
 		</script>
 		<!-- End -->
 
@@ -306,7 +297,20 @@
 		<h3 style="color:#9C5656" class="titre_section"> Sécurité routière : les femmes conduisent mieux que les hommes.</h3>
 		<div class="container">
 			
-			
+		<!-- Start viz 2 -->
+			<script type="text/javascript">
+				d3.select("body")
+					.append("h2")
+					.text("Nombre de personnes mortes par accidents par mois");
+				  var svg2 = d3.select("body")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart2');	
+			</script>
+		<!-- End -->
 
 
 		<!-- Start viz 3, viz 4, viz 5, viz 6 and viz 7 -->
