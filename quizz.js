@@ -22,8 +22,8 @@
                                     "Sur les voies communales",
                                     "Sur les routes départementales",
                                 ],
-            "correct"       :   "Sur les voies communales",
-            "explanation"   :   "Selon les statistiques du fichier national des accidents de la route (BAAC), les accidents ont majoritairement lieu sur les voies communales (19%) et sur les routes departementales (11%).",
+            "correct"       :   "Sur les routes départementales",
+            "explanation"   :   "Selon les statistiques du fichier national des accidents de la route (BAAC), les accidents ont majoritairement lieu sur les routes departementales (72%) et sur les voies communales (9%) (11%).",
         },
         {
              "question"      :   "... sont majoritairement à l'origine des accidents de la route en france.",
