@@ -216,6 +216,20 @@
 	</iframe>
 			
 			<h4 style="color:#9C5656" class="titre_section" align-rigth>45 ans plus tard quels résultats ? </h4>
+			
+				<!-- Start viz 1  -->
+		<script type="text/javascript">
+			d3.select("body")
+					.append("h2")
+					.text("Nombre de personnes mortes par accidents par an");
+				  var svg1 = d3.select("body")
+					.append("svg")
+					  .attr("width", width2 + margin2)
+					  .attr("height", height2 + margin2)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart1');
+			
 		</div>
 		</div>
 		</div>
@@ -288,18 +302,7 @@
 		<div class="container">
 			
 			
-		<!-- Start viz 1 and viz 2 -->
-		<script type="text/javascript">
-			d3.select("body")
-					.append("h2")
-					.text("Nombre de personnes mortes par accidents par an");
-				  var svg1 = d3.select("body")
-					.append("svg")
-					  .attr("width", width2 + margin2)
-					  .attr("height", height2 + margin2)
-					.append('g')
-						.attr('class','chart')
-						.attr('id', 'chart1');
+	
 
 				  d3.select("body")
 					.append("h2")
