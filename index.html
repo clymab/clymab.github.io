@@ -516,6 +516,7 @@
 				  var x = myChart3.addMeasureAxis("x", "nbLum");
 				  x.title = "";
 				  var y = myChart3.addCategoryAxis("y", "lum");
+				  y.addOrderRule("nbLum");
 				  y.title = "";
 				  myChart3.addSeries(null, dimple.plot.bar);
 				  myChart3.draw();
@@ -526,6 +527,7 @@
 				  var x = myChart4.addMeasureAxis("x", "nbCol");
 				  x.title = "";
 				  var y = myChart4.addCategoryAxis("y", "col");
+				  y.addOrderRule("nbCol");
 				  y.title = "";
 				  myChart4.addSeries("Count", dimple.plot.bar);
 				  myChart4.draw();
@@ -547,6 +549,7 @@
 						  var x = myChart6.addMeasureAxis("x", "nbCatr");
 						  x.title = "";
 						  var y = myChart6.addCategoryAxis("y", "catr");
+						  y.addOrderRule("nbCatr");
 						  y.title = "";
 						  myChart6.addSeries("Count", dimple.plot.bar);
 						  myChart6.draw();
@@ -557,6 +560,7 @@
 							  var x = myChart7.addMeasureAxis("x", "nbCatv");
 							  x.title = "";
 							  var y = myChart7.addCategoryAxis("y", "catv");
+							  y.addOrderRule("nbCatv");
 							  y.title = "";
 							  myChart7.addSeries(null, dimple.plot.bar);
 							  myChart7.draw();
