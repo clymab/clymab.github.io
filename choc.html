@@ -3,56 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      #tooltip {
-        color: white;
-        opacity: .9;
-        background: #333;
-        padding: 5px;
-        border: 1px solid lightgrey;
-        border-radius: 5px;
-        position: absolute;
-        z-index: 10;
-        visibility: hidden;
-        white-space: nowrap;
-        pointer-events: none;
-      }
-      #circle circle {
-        fill: none;
-        pointer-events: all;
-      }
-      path.group {
-        fill-opacity: .8;
-      }
-      path.chord {
-        fill-opacity: .8;
-        stroke: #000;
-        stroke-width: .25px;
-      }
-      #circle:hover path.fade {
-        display: none;
-      }
-
-      h2 {
-        color: steelblue;
-        font-size: 1.6em;
-        padding-bottom: 10px;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style_choc.css"/>
+    <span id="mlvl_logo">      
+        <a><img class="logo-img" src="ENSAE.jpg"/></a>
+    </span>
   </head>
+
+  <body class="container">
+      <!-- Sunburst -->
+      <div class="header">
+          <span id="product_title">
+            <span class="dark">
+              <a>Types de collisions</a>
+            </span>
+          </span>
+          <h1 class="tagline">Informations générales sur les types de collisions entre plusieurs véhicules en 2016.</h1> 
+          <p class="interaction">Passez la souris sur le graphique pour explorer les différents points d'impacts initiaux observé lors des collisions. 
+              <br> En choisissant sur le graphique, pour un véhicule donné un point d'impact (par expemple <font color="#990000">"Avant"</font>), 
+              on obtient les <br> différents points de chocs pour les autres véhicules avec lesquels il est renté en collision (<font color="#990000">"Avant gauche", "Arrière"...</font>).</p>
+        </div>
+
+        <span id="about_link"><a href="https://bl.ocks.org/mbostock/4062006"><span class="questionmk">?</span><br>Références</a></span>
+
+
   <body>
     <div id="tooltip"></div>
-    <script src="js/d3.js"></script>
-    <script src="//d3js.org/d3.v4.min.js"></script> 
-    <script src="js/underscore.js"></script>
-    <script src="js/mapper.js"></script>
+    <script src="d3.js"></script>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script src="underscore.js"></script>
+    <script src="mapper.js"></script>
 
-    <h2>Informations générales sur les types de collision (2016)</h2> 
-      
-    <h3> Les différents types de collisions entre les véhicules sont décrit dans cette section :<br/>  </h3>
-        
-    <img src="Collisions.PNG" align="rigth" height="50%" width="50%"/>
     <script>
       //*******************************************************************
       //  CREATE MATRIX AND MAP
@@ -75,7 +55,7 @@
       //  DRAW THE CHORD DIAGRAM
       //*******************************************************************
       function drawChords (matrix, mmap) {
-        var w = 680, h = 600, r1 = h / 2, r0 = r1 - 100;
+        var w = 980, h = 510, r1 = h / 2, r0 = r1 - 100;
 
         var fill = d3.scale.ordinal()
             .domain(d3.range(4))
@@ -174,7 +154,16 @@
             });
           }
       }
-
     </script>
+        <div id="post"><img src="p_choc.PNG" height="120%" width="120%"/></div>
+
+        <div id="chart_footer">
+            <span id="dac_logo">
+                <a href=""><img src="precedent.jpg"/></a>
+            </span>
+          <span id="links">
+            <span>Les données utilisées sont disponibles sur <a href="https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/">data.gouv.fr</a></span>
+          </span>
+        </div>
   </body>
 </html>
