@@ -81,6 +81,42 @@
 			rect.dimple-autre-collision{
 				fill: rgba(128, 177, 211, 0.1) !important;
 			}
+			
+			#mainMenu{
+			text-align: center;
+			}
+			.navb{
+				border:1px solid #ccc;
+				border-width:1px 0;
+				list-style:none;
+				margin:0;
+				padding:0;
+				text-align:center;
+				background-color: #333;
+				position: fixed;
+				top: 0;
+				width: 100%;
+			}
+			.navb li{
+				display:inline;
+			}
+			.navb a{
+				display:inline-block;
+				padding:10px;
+				text-decoration:none;
+				color: white;
+			}
+			.emptyDiv{
+				height: 5px;
+			}
+			.animatedBlack{
+				color: black;
+			}
+			#newBanner{
+				width: 100%;
+				height: 20px;
+				background-image: url("banner5.jpg");
+			}
 		</style>
 
 		<script>
@@ -139,7 +175,8 @@
 	<body class="landing">
 
 		<!-- Header -->
-	<header id="header">
+	<header>
+	<!--
 		<h2 class="animated fadeInDown align-right-subtitle" style="color:white"> Pour tout savoir sur les accidents de la route en France de 2011 à 2016 </h2>
 
 		&nbsp &nbsp<a href="http://www.ensae.fr/" class="nounderline">
@@ -164,40 +201,37 @@
 					<a href="#" class="fa fa-linkedin"></a>
 					</a>
 				</div>
-			</ul>
-			<nav id="nav">
+				-->
+				
+				<div id = "mainMenu1" class = "navb">
 				<ul>
-					<center>
-					<a style="color:black" href="#one" class="nounderline"> <font size="+1">La sécurité routière </font ></a>
-					<br>
-					<a style="color:black" href="#quizz" class="nounderline"><font size="+1">Quiz</font ></a>
-					<br>
-					<a style="color:black" href="#four" class="nounderline"><font size="+1">Des idées préconçues</font ></a>
-					<br>
-					<a style="color:black" href="#five" class="nounderline"><font size="+1">A vous de jouer!</font ></a>
-
-					</center>
+					<li><a href="#one"> La sécurité routière </a></li>
+					<li><a href="#quizz">Quiz</a></li>
+					<li><a href="#four">Des idées préconçues</a></li>
+					<li><a href="#five">A vous de jouer!</a></li>
 				</ul>
-			</nav>
+				</div>
+				
+				<div id = "newBanner">
+				</div>
 
-
-
-		</header>
-
-		<!-- Banner -->
+			<!-- Banner -->
+			<!--
 			<section id="banner">
-			<center>
-			 <h1 class="animated slideInLeft text-bottom align-left-title"> Accidentés : <br> et si c'était vous? </h1>
-			</center>
 			</section>
-
-			<br>
+			-->
+			<!--
+			 <h1 class="animated slideInLeft text-bottom align-left-title"> Accidentés: et si c'était vous? </h1>
+			-->
+		</header>
 
 <!-- Première partie -->
 
 
 
 	<section id="one" class="wrapper style12 align-center">
+		<div class = "emptyDiv">
+		</div>
 		<center>
 		<h3 style="color:#b80000" class="titre_section"> LA SECURITE ROUTIERE, QUE SAVEZ-VOUS ? </h3>
 		</center>
@@ -435,8 +469,10 @@
 						.attr('id', 'chart8');
 		</script>
 			</div>
-	</section>			
-<div class="paraxify intermede-3" style="background-position: center center;"> </div>
+	</section>	
+
+	<section id="five" class="wrapper style12 align-center">
+	<div class="paraxify intermede-3" style="background-position: center center;"> </div>
 
 		<div style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
 		<h4 style="color:#FFBF00"> A VOUS DE JOUER </h4>
@@ -448,7 +484,7 @@
 		</div>
 
 	</div>
-		<!--/div -->
+	</section>
 
 
 	<script type="text/javascript">

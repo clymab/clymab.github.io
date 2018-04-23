@@ -553,6 +553,7 @@ list-style-type: none;
 			padding-left: 0.25em;
 		}
 
+		/*
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
@@ -562,6 +563,7 @@ list-style-type: none;
 		ul li {
 			padding-left: 0.5em;
 		}
+		*/
 
 		ul.alt {
 			list-style: none;
@@ -1016,7 +1018,7 @@ list-style-type: none;
 
 	#banner {
 		background: url("../images/banner5.jpg");
-		height: 440px;
+		height: 100px;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 100%;
