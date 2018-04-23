@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="hierarchie">
   <head>
     <meta charset="utf-8">
     <title>Sequences sunburst</title>
@@ -7,26 +7,48 @@
     <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
     <link rel="stylesheet" type="text/css" href="css/sequences.css"/>
+    <span id="mlvl_logo">      
+        <a><img class="logo-img" src="images/ENSAE.jpg"/></a>
+      </span>
   </head>
   <body class="container">
       <!-- Sunburst -->
+      <div class="header">
+          <span id="product_title">
+            <span class="dark">
+              <a>Informations générales</a>
+            </span>
+          </span>
+          <h1 class="tagline">Informations structurées sur les accidents de route en France de 2010 à 2016</h1>
+          <p class="interaction">Passez la souris sur le graphique pour explorer les informations sur les accidents en France.</p>
+        </div>
 
-      <h2>Informations générales sur les accidents de route en France (2010-2016)</h2> 
+        <span id="about_link"><a href="https://bl.ocks.org/kerryrodden/7090426"><span class="questionmk">?</span><br>Références</a></span>
 
-    <div id="main">
+      <div id="main">
       <div id="sequence"></div>
       <div id="chart">
         <div id="explanation" style="visibility: hidden;">
-          <span id="percentage"></span><br/>
+          <span id="percentage"></span> <br/>
           des accidents
         </div>
+        <div id="post"><img src="images/legende_VF.PNG" height="120%" width="120%"/></div>
       </div>
     </div>
-
     <script type="text/javascript" src="js/sequences.js"></script>
     <script type="text/javascript">
       // Hack to make this example display correctly in an iframe on bl.ocks.org
       d3.select(self.frameElement).style("height", "700px");
-  </script> 
+  </script>
+  
+  <div id="chart_footer">
+      <span id="dac_logo">
+          <a href=""><img src="images/precedent.jpg"/></a>
+      </span>
+    <span id="links">
+      <span>Les données utilisées sont disponibles sur <a href="https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/">data.gouv.fr</a></span>
+    </span>
+  </div>
+  
   </body>
 </html>
