@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<!--
+	Interphase by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Les accidents de la route</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<!-- <meta property="og:image:type" content="image/jpeg">
+		<meta property="og:image:width" content="3523">
+		<meta property="og:image:height" content="2372"> -->
+		<meta property="og:title" content="ACCIDENTS" />
+		<meta property="og:description" content="ACC" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117907715-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-117907715-1');
+</script>
+
+		<script src="d3.v3.min.js"></script>
+		<script src="dimple.v2.0.0.min.js"></script>
+
+		<script type="text/javascript">
+			var margin = 75,
+				  width = 1400 - margin,
+				  height = 350 - margin;
+			var margin2 = 75,
+				  width2 = 1400 - margin,
+				  height2 = 550 - margin;
+		</script>
+
+		<style>
+			.footer-navigation {
+			display:flex;
+			justify-content:space-around;
+			padding:70px;
+			background-position:center;
+			background-size:cover;
+			background-image:url(analysis.jpg)
+			}
+			.footer-navigation__container {
+			align-self:center
+			}
+			
+			.footer-navigation__navigate-button {
+			display:inline-block;
+			width:64px;
+			height:64px;
+			vertical-align:sub;
+			margin:15px 0
+			}
+			.footer-navigation__navigate-button.btn-prev-viz {
+			margin-right:40px;
+			margin-right:2vw
+			}
+			.footer-navigation__navigate-button.btn-next-viz {
+			margin-left:40px;
+			margin-left:2vw
+			}
+
+			.footer-navigation__title-container {
+			display:inline-block;
+			color:#FFF
+			}
+			.footer-navigation__title {
+			color:inherit;
+			font-weight:400;
+			font-size:34px
+			}
+			.footer-navigation__subtitle {
+			color:inherit;
+			font-weight:300;
+			font-size:14px;
+			text-transform:uppercase
+			}
+
+			.footer-navigation__separator {
+			border-right:1px solid #FFF;
+			height:75px;
+			align-self:center
+			}
+			.footer-navigation__title-container {
+			display:inline-block;
+			color:#FFF
+			}
+			.footer-navigation__container {
+			align-self:center
+			}
+
+			.footer-navigation__title-container:hover {
+			color:#9BDAF1
+			}
+			@media (max-width: 1400px) {
+			.spotlight .content {
+			padding:1% 2% 2% 2%
+			}
+			.how-we-conducted-this-analysis {
+			margin-right:0;
+			margin-bottom:25px
+			}
+			}
+			@media (max-width: 1000px) {
+			.spotlight {
+			flex-direction:column !important
+			}
+			.footer-navigation,#top-footer,ul.icons.major {
+			flex-direction:column
+			}
+			.footer-navigation {
+			padding:25px
+			}
+			}
+
+			h2{
+				text-align: center;
+			}
+			svg g.chart{
+				margin: 0 auto;
+			}
+			g.dimple-axis g.tick text{
+				font-size: 13px !important;
+			}
+			g.dimple-axis{
+				width: 500px !important;
+				height: 500px !important;
+			}
+			rect.dimple-tu-{
+				fill: rgb(251, 128, 114) !important;
+				}
+			rect.dimple-indemne{
+				fill: rgb(179, 222, 105) !important;
+				stroke: rgb(149, 185, 87) !important;
+			}
+			rect.dimple-bless--l-ger{
+				fill: rgb(128, 177, 211) !important;
+				stroke: rgb(107, 148, 176) !important;
+			}
+			rect.dimple-bless--hospitalis-{
+				fill: rgb(253, 180, 98) !important;
+				stroke: rgb(211, 150, 81) !important;
+			}
+			rect#All__juillet_, rect.dimple-plein-jour, rect.dimple-vendredi, rect.dimple-samedi, #cliche2.dimple-series-0.dimple-route-d-partementale{
+				fill: rgb(251, 128, 114) !important;
+			}
+			rect#All__octobre_, rect#All__août_{
+				fill: rgb(253, 180, 98) !important;
+			}
+			rect#All__fevrier_{
+				fill: rgb(179, 222, 105) !important;
+			}
+			rect.dimple-autre-collision{
+				fill: rgba(128, 177, 211, 0.1) !important;
+			}
+
+			#mainMenu{
+			text-align: center;
+			}
+			.navb{
+				border:1px solid #ccc;
+				border-width:1px 0;
+				list-style:none;
+				margin:0;
+				padding:0;
+				text-align:center;
+				background-color: #333;
+				position: fixed;
+				top: 0;
+				width: 100%;
+			}
+			.navb li{
+				display:inline;
+			}
+			.navb a{
+				display:inline-block;
+				padding:10px;
+				text-decoration:none;
+				color: white;
+			}
+			.emptyDiv{
+				height: 5px;
+			}
+			.animatedBlack{
+				color: black;
+			}
+			#newBanner{
+				height: 600px;
+				background-image: url("banner5.jpg");
+			}
+		</style>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-96542879-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
+		<!--<script src="https://code.jquery.com/jquery-1.11.0.js"></script>-->
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script type="text/javascript" src="script4.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<!--		<script type="text/javascript" src="js/jquery.min.js"></script> -->
+		<script type="text/javascript" src="js/skel.min.js"></script>
+		<script type="text/javascript" src="js/skel-layers.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="counter.js"></script>
+		<script type="text/javascript" src="quizz.js"></script>
+		<script type="text/javascript" src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<!-- Irène js -->
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/animate.css" />
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/font-awesome-animation.min.css">
+			<link rel="stylesheet" href="style_comp.css"/>
+
+		</noscript>
+
+		<link rel="icon" href="10420.ico" type="image/x-icon">
+		<!-- Fin -->
+	</head>
+
+	<style type="text/css">
+		a.nounderline:link
+		{
+		text-decoration:none;
+		}
+		</style>
+
+
+	<body class="landing">
+
+		<!-- Header -->
+	<header>
+	<!--
+		<h2 class="animated fadeInDown align-right-subtitle" style="color:white"> Pour tout savoir sur les accidents de la route en France de 2011 à 2016 </h2>
+
+		&nbsp &nbsp<a href="http://www.ensae.fr/" class="nounderline">
+			<img src="images/ensae2.png" width="175" height="100"/>
+		</a>
+			<br>
+			<br>
+			<br>
+
+				<div id='buttons'>
+					&nbsp
+					&nbsp
+					&nbsp
+					<a href="#" class="fa fa-facebook"></a>
+					&nbsp
+					&nbsp
+					&nbsp
+					<a href="#" class="fa fa-twitter"></a>
+					&nbsp
+					&nbsp
+					&nbsp
+					<a href="#" class="fa fa-linkedin"></a>
+					</a>
+				</div>
+				-->
+
+				<div id = "mainMenu1" class = "navb">
+				<ul>
+					<li><a href="#one"> La sécurité routière </a></li>
+					<li><a href="#quizz">Quiz</a></li>
+					<li><a href="#four">Des idées préconçues</a></li>
+					<li><a href="#five">A vous de jouer!</a></li>
+				</ul>
+				</div>
+
+				<div id = "newBanner">
+				</div>
+
+			<!-- Banner -->
+			<!--
+			<section id="banner">
+			</section>
+			-->
+			<!--
+			 <h1 class="animated slideInLeft text-bottom align-left-title"> Accidentés: et si c'était vous? </h1>
+			-->
+		</header>
+
+<!-- Première partie -->
+
+
+
+	<section id="one" class="wrapper style12 align-center">
+		<div class = "emptyDiv">
+		</div>
+		<center>
+		<h3 style="color:#b80000; font-weight:bold" class="titre_section"> LA SECURITE ROUTIERE, QUE SAVEZ-VOUS ? </h3>
+		</center>
+		<div class="container">
+
+
+		<div id = "intro" style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+		<div style="color:#000000; text-align: justify;">
+ 			<h5 style="color:#000000">«La sécurité routière c’est l’affaire de tous». Sans vouloir faire l’apologie du contraire, force est de remarquer que les idées reçues, en matière de sécurité routière, sont souvent fausses. En effet, on imagine qu'un nombre important d'accidents est causé par les mauvaises conditions (peu de visibilité, chaussée glissante, conducteur alcoolisé…). Parce que la circulation automobile et son corollaire, l’insécurité routière est le quotidien de tous, nous avons tous en tête des « clichés », des lieux communs sur ce qui peut expliquer l’hécatombe que nous connaissons sur nos routes. Le dicton « chauffard au volant, la mort au tournant» a fait partie pendant longtemps de ce type de cliché qui perdure encore. Cependant, il est important de notifier qu’en plus de 40 ans, nos habitudes de conduite, notre perception de la route et les règles du Code de la route ont beaucoup évolué. Les chiffres des accidents de la route donnent toute la mesure du chemin parcouru. </h5>
+
+
+
+		<br>
+			<h4  class="titre_section"> Des décennies de mesures </h4>
+
+	<h5 style="color:#000000">Si la première automobile date de 1880, le code de la route tel que nous le connaissons aujourd'hui est assez recent. Revenons ensemble sur les lois qui ont marqué la politique de sécurité routière en France. </h5>
+
+	<iframe src="https://www.preceden.com/timelines/374901/embed" width="100%" height="480" frameborder="0">
+	<a href="https://www.preceden.com" target="_top">Preceden Timeline Maker</a>
+	</iframe>
+			<br>
+
+
+			<h4  class="titre_section" align-right-subtitle>45 ans plus tard quels résultats ? </h4>
+				<h5 style="color:#000000"> Les grandes réformes du code de la route ont eu des impacts très significatifs sur le nombre de mortalité en France. En 1972, on déplorait 18 034 décès sur nos routes et 386 874 blessés. En 2016, moins de 3 500 personnes ont été tuées et 81 000 personnes ont été blessées. Dans le même temps, le trafic routier a été multiplié par 2,5 et la population par 1,3. Entre 1972 et 2016, ce sont donc plus 320 000 vies qui ont été épargnées.</h5>
+		</div>
+		<script type="text/javascript">
+			d3.select("#intro")
+					.append("h2")
+					.text("Nombre de personnes mortes par accidents par an");
+				  var svg1 = d3.select("#intro")
+					.append("svg")
+					  .attr("width", width2 + margin2)
+					  .attr("height", height2 + margin2)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart1');
+
+		</script>
+		</div>
+		</div>
+
+	</section>
+
+
+<div class="paraxify intermede-1" style="background-position: center center;"> </div>
+
+
+<section id="quizz" class="wrapper style3 align-center">
+		<div style="font-size: 100px;">
+		</div>
+		<center>
+		<h3 style="color:#b80000"> TESTEZ VOS CONNAISSANCES ! </h3>
+		</center>
+			<center>
+				<h4>Clichés, préjugés, idées reçues, accidents de la route, hommes, femmes : que savez-vous concrètement ? </h4>
+			</center>
+		<div class="container">
+		 <div id="frame" role="content"></div>
+		</div>
+
+
+</section>
+
+
+<div class="paraxify intermede-2" style="background-position: center center;"> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<section id="four" class="wrapper style12 align-center">
+		<div style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+		</div>
+		<center>
+		<h3 style="color:#b80000" class="titre_section"> CLICHES, PREJUGES, QUE NOUS DISENT LES DONNEES ?</h3>
+		</center>
+		<div class="container">
+		<div style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+		<div style="color:#000000; text-align: justify;">
+			<h4 class="titre_section"> Cliché n°1 "Les femmes conduisent moins bien que les hommes" </h4>
+		<div style="color:#000000; text-align: justify;">
+			<h5 style="color:#000000">Les études statistiques du fichier BAAC montrent que les femmes ont une conduite au volant moins à risque que les hommes. Pourtant, malgré l'évidence des chiffres, les clichés sur les conductrices ont la vie dure. Plus dangereuses, moins attentionnées et moins à l'aise que les hommes sur la route, les femmes seraient de mauvaises conductrices à en croire les stéréotypes répandus dans la société et largement entretenus par des vidéos sur le net. Puisque les chiffres parlent d'eux-mêmes, voici ce qu’ils disent :
+			</h5>
+		</div>
+		</div>
+		</div>
+
+		<center>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/Eduq0wbEXoo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</center>
+
+
+
+<!--
+	Graphes Lina
+-->
+
+<script id="infogram_0_90cf269b-b938-47f0-a272-cced0c9dbea4" title="Pictorial" src="https://e.infogram.com/js/dist/embed.js?7SA" type="text/javascript"></script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/90cf269b-b938-47f0-a272-cced0c9dbea4" style="color:#989898!important;text-decoration:none!important;" target="_blank">Pictorial</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+<script id="infogram_0_c02cd7b7-996f-46a2-ac93-c0aa136a70cc" title="Comparison White" src="https://e.infogram.com/js/dist/embed.js?UCW" type="text/javascript"></script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/c02cd7b7-996f-46a2-ac93-c0aa136a70cc" style="color:#989898!important;text-decoration:none!important;" target="_blank">Comparison White</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+
+</div>
+
+		<div class="container">
+			<div id = "cliche2" style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+			<div style="color:#000000; text-align: justify;">
+				<h4 class="titre_section"> Cliché n°2 : "Les accidents ont lieu la nuit ou sur les autoroutes"</h4>
+			<div style="color:#000000; text-align: justify;">
+				<h5 style="color:#000000">
+					Contrairement aux idées reçues, la majorité des accidents ont lieu en journée et sur les routes départementales. En 2016, 75% des accidents de la route se sont produits en plein jour et 4/5 par beau temps. De plus, plus 85% des accidents ont lieu sur les voies départementales et communales.
+				</h5>
+			</div>
+			</div>
+			<script type="text/javascript">
+			d3.select("#cliche2")
+					.append("h2")
+					.text("Nombre d'accidents en fonction des conditions d'éclairage");
+				var svg3 = d3.select("#cliche2")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart3');
+
+			d3.select("#cliche2")
+					.append("h2")
+					.text("Nombre d'accidents en fonction du type de route");
+				var svg6 = d3.select("#cliche2")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart6');
+			</script>
+			</div>
+
+
+			<div id="cliche3" style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+			<div style="color:#000000; text-align: justify;">
+				<h4  class="titre_section"> Cliché n°3 : "Les accidents se produisent les jours de travail et les périodes de fête"</h4>
+			<div style="color:#000000; text-align: justify;">
+				<h5 style="color:#000000">
+					A l’origine d’un accident, il y a toujours une combinaison de multiples facteurs. Éblouis par le soleil rasant (beau jour et le soleil retrouvé), fatigue au volant (fin de semaine), sous l'effet de l'alcool (sortie des boîtes de nuit), les accidents se produisent généralement en début de week-ends (vendredi, samedi) et surtout pendant la période estivale (juillet, aôut).</h5>
+			</div>
+			</div>
+			<script type="text/javascript">
+			d3.select("#cliche3")
+					.append("h2")
+					.text("Nombre d'accidents en fonction du jour de la semaine");
+				var svg5 = d3.select("#cliche3")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart5');
+
+				d3.select("#cliche3")
+					.append("h2")
+					.text("Nombre de personnes mortes par accidents par mois");
+				  var svg2 = d3.select("#cliche3")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart2');
+			</script>
+			</div>
+
+			<div id="cliche4" style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+			<div style="color:#000000; text-align: justify;">
+				<h4 class="titre_section"> Cliché n°4 : "La place du mort?"</h4>
+			<div style="color:#000000; text-align: justify;">
+				<h5 style="color:#000000">
+					Le saviez-vous? Les accidents de la route sont plus mortels pour les piétons que pour les passagers ou les conducteurs eux-mêmes! Mais quand on est piéton, il semblerait que se déplacer en roller ou en trotinette permet de réduire la gravité des chocs</h5>
+			</div>
+			</div>
+			<script type="text/javascript">
+			d3.select("#cliche4")
+					.append("h2")
+					.text("Gravité du choc et catégorie de l'usager");
+			var svg10 = d3.select("#cliche4")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart10');
+			</script>
+			</div>
+
+
+			<div id="cliche5" style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
+			<div style="color:#000000; text-align: justify;">
+				<h4  class="titre_section"> Cliché n°5 :  "Un accident sur autoroute ça ne pardonne pas..."</h4>
+			</div>
+
+	<div class="row">
+	<div class="col-lg-8 col-sm-8 col-xs-12">
+
+		<script type="text/javascript">
+			d3.select("#cliche5")
+					.append("h2")
+					.text("Type de collision et gravité des accidents");
+			var svg8 = d3.select("#cliche5")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+						.attr('id', 'chart8');
+
+			d3.select("#cliche5")
+					.append("h2")
+					.text("Type de route et gravité des accidents");
+			var svg9 = d3.select("#cliche5")
+					.append("svg")
+					  .attr("width", width + margin)
+					  .attr("height", height + margin)
+					.append('g')
+						.attr('class','chart')
+
+						.attr('id', 'chart8');
+		</script>
+	</div>
+
+		<div class="col-lg-4 col-sm-4 col-xs-12">
+
+		<p>
+			Qui l'eut cru! Les accidents causant le plus de morts sont les accidents sans collision! Et oui!, les accidents sans collision. Il pourrait s'agir de mauvaises manoeuvres, de dérapages effectués dans le but d'éviter une collision, etc. Quant aux accidents avec collision, les plus dangereux sont les collisions frontales. Par ailleurs, les routes nationales et départementales sont les plus grandes tueuses</p>
+
+		</div>
+		</div>
+
+
+			</div>
+	</section>
+
+
+	<div class="paraxify intermede-3" style="background-position: center center;"> </div>
+
+	<section id="five" class="wrapper style12 align-center">
+		<div style="font-size: 100px;">
+		</div>
+		<center>
+		<h3 style="color:#b80000"> A VOUS DE JOUER ! </h3>
+		</center>
+			<center>
+				<h4> Que voulez vous savoir dans les détails et dans quelle proportion ? </h4>
+			</center>
+
+			<div class="footer-navigation">
+					<div class="footer-navigation__container">
+						<a href="https://clymab.github.io/info_generale.html"><div class="footer-navigation__navigate-button btn-prev-viz"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.8 29.6">
+				  <path fill="#FFF" d="M14.9 28.1c-7.4 0-13.5-6-13.5-13.5s6-13.5 13.5-13.5c7.4 0 13.5 6 13.5 13.5s-6.1 13.5-13.5 13.5zm0-28.1C6.8 0 .2 6.6.2 14.6s6.6 14.6 14.6 14.6c8.1 0 14.6-6.6 14.6-14.6S22.9 0 14.9 0zM17 8.3c-.2-.2-.6-.2-.8.1l-5.4 6.2 5.4 6.2c.1.1.3.2.4.2.1 0 .3 0 .4-.1.2-.2.3-.6.1-.8l-4.7-5.5 4.7-5.5c.2-.2.2-.6-.1-.8z"/>
+				</svg></div></a>
+						<a href="https://clymab.github.io/info_generale.html">
+							<div class="footer-navigation__title-container">
+								<div class="footer-navigation__title">INFORMATIONS GENERALES </div>
+								<div class="footer-navigation__subtitle">Visualisez les infos sur les accidents de 2010-2016</div>
+							</div>
+						</a>
+					</div>
+				
+					<div class="footer-navigation__separator"></div>
+				
+					<div class="footer-navigation__container">
+						<a href="https://clymab.github.io/choc.html">
+							<div class="footer-navigation__title-container">
+								<div class="footer-navigation__title">TYPES DE COLLISIONS</div>
+								<div class="footer-navigation__subtitle">Visualiser les points d'impacts lors des collisions</div>
+							</div>
+						</a>
+						<a href="https://clymab.github.io/choc.html"><div class="footer-navigation__navigate-button btn-next-viz"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.8 29.6">
+				  <path fill="#FFF" d="M1.4 14.6c0-7.4 6-13.5 13.5-13.5 7.4 0 13.5 6 13.5 13.5s-6 13.5-13.5 13.5S1.4 22 1.4 14.6zm-1.2 0c0 8.1 6.6 14.6 14.6 14.6 8.1 0 14.6-6.6 14.6-14.6S22.9 0 14.9 0C6.8 0 .2 6.6.2 14.6zm12.4-5.5l4.7 5.5-4.7 5.5c-.2.2-.2.6.1.8.1.1.2.1.4.1s.3-.1.4-.2l5.4-6.2-5.4-6.2c-.2-.2-.6-.3-.8-.1-.3.2-.3.6-.1.8z"/>
+				</svg></div></a>
+					</div>
+				</div>			
+	</section>
+
+
+	<script type="text/javascript">
+		  // Draw the graphs based on 'nb of accidents' data
+		  function drawNbDead(data) {
+		  /*
+			D3.js setup code
+		  */
+				"use strict";
+			  //debugger;
+		  /*
+			Dimple.js Chart construction code
+		  */
+				  var myChart1 = new dimple.chart(svg1, data);
+				  var x = myChart1.addTimeAxis("x", "an");
+				  x.dateParseFormat = "%Y";
+				  x.tickFormat = "%Y";
+				  x.timeInterval = 4;
+				  x.title = "";
+				  var y1 = myChart1.addMeasureAxis("y", "nb_tues");
+				  //y.useLog = true;
+				  //y.logBase = 2;
+				  y1.title = "";
+				  myChart1.addSeries("Nombre de morts", dimple.plot.line, [x, y1]);
+				  myChart1.addSeries("Nombre de morts", dimple.plot.scatter, [x, y1]);
+				  var y2 = myChart1.addMeasureAxis("y", "pop");
+				  //y.useLog = true;
+				  //y.logBase = 2;
+				  y2.title = "";
+				  var popSeriesLine = myChart1.addSeries("Population", dimple.plot.line, [x, y2]);
+				  var popSeriesScatter = myChart1.addSeries("Population", dimple.plot.scatter, [x, y2]);
+				  popSeriesLine.aggregate = dimple.aggregateMethod.avg;
+				  popSeriesScatter.aggregate = dimple.aggregateMethod.avg;
+				  myChart1.addLegend(360, 15, 780, 25, "right");
+				  myChart1.draw();
+				  y1.shapes.select("g.dimple-axis path.domain")
+					.style("stroke", "rgb(128, 177, 211)");
+				  y2.shapes.select("g.dimple-axis path.domain")
+					.style("stroke", "rgb(251, 128, 114)");
+				  var myChart2 = new dimple.chart(svg2, data);
+				  myChart2.setBounds(350, 10, 800, 250);
+				  var x = myChart2.addMeasureAxis("x", "nb_tues");
+				  x.title = "";
+				  var y = myChart2.addCategoryAxis("y", "mois");
+				  y.title = "";
+				  y.addOrderRule(["decembre", "novembre", "octobre", "septembre", "août", "juillet", "juin", "mai", "avril", "mars", "fevrier", "janvier"]);
+				  myChart2.addSeries(null, dimple.plot.bar);
+				  myChart2.draw();
+			  function drawLum(data){
+				  var myChart3 = new dimple.chart(svg3, data);
+				  myChart3.setBounds(350, 10, 800, 140);
+				  var x = myChart3.addMeasureAxis("x", "nbLum");
+				  x.title = "";
+				  var y = myChart3.addCategoryAxis("y", "lum");
+				  y.addOrderRule("nbLum");
+				  y.title = "";
+				  myChart3.addSeries(null, dimple.plot.bar);
+				  myChart3.draw();
+				  function drawCol(data){
+				  /*
+				  var myChart4 = new dimple.chart(svg4, data);
+				  myChart4.setBounds(350, 10, 800, 170);
+				  var x = myChart4.addMeasureAxis("x", "nbCol");
+				  x.title = "";
+				  var y = myChart4.addCategoryAxis("y", "col");
+				  y.addOrderRule("nbCol");
+				  y.title = "";
+				  myChart4.addSeries("Count", dimple.plot.bar);
+				  myChart4.draw();
+				  */
+					function drawWeekday(data){
+					  var myChart5 = new dimple.chart(svg5, data);
+					  myChart5.setBounds(350, 10, 800, 200);
+					  var x = myChart5.addMeasureAxis("x", "nbWeekday");
+					  x.title = "";
+					  var y = myChart5.addCategoryAxis("y", "weekday");
+					  y.addOrderRule(["dimanche", "samedi", "vendredi", "jeudi", "mercredi", "mardi", "lundi"]);
+					  y.title = "";
+					  myChart5.addSeries(null, dimple.plot.bar);
+					  myChart5.draw();
+					  function drawCatr(data){
+						  var myChart6 = new dimple.chart(svg6, data);
+						  myChart6.setBounds(350, 10, 800, 170);
+						  var x = myChart6.addMeasureAxis("x", "nbCatr");
+						  x.title = "";
+						  var y = myChart6.addCategoryAxis("y", "catr");
+						  y.addOrderRule("nbCatr");
+						  y.title = "";
+						  myChart6.addSeries("Count", dimple.plot.bar);
+						  myChart6.draw();
+						  function drawCatv(data){
+						  /*
+							  var myChart7 = new dimple.chart(svg7, data);
+							  myChart7.setBounds(350, 10, 800, 500);
+							  var x = myChart7.addMeasureAxis("x", "nbCatv");
+							  x.title = "";
+							  var y = myChart7.addCategoryAxis("y", "catv");
+							  y.addOrderRule("nbCatv");
+							  y.title = "";
+							  myChart7.addSeries(null, dimple.plot.bar);
+							  myChart7.draw();
+							  */
+							  function drawColGrav(data){
+								  var myChart8 = new dimple.chart(svg8, data);
+								  myChart8.setBounds(350, 40, 800, 280);
+								  var x = myChart8.addPctAxis("x", "Num_Acc");
+								  x.title = "";
+								  var y = myChart8.addCategoryAxis("y", "col");
+								  y.title = "";
+								  myChart8.addSeries("grav", dimple.plot.bar);
+								  myChart8.addLegend(400, 15, 710, 25, "right");
+								  myChart8.draw();
+								  function drawCatrGrav(data){
+									  var myChart9 = new dimple.chart(svg9, data);
+									  myChart9.setBounds(350, 40, 800, 280);
+									  var x = myChart9.addPctAxis("x", "Num_Acc");
+									  x.title = "";
+									  var y = myChart9.addCategoryAxis("y", "catr");
+									  y.title = "";
+									  myChart9.addSeries("grav", dimple.plot.bar);
+									  myChart9.addLegend(400, 15, 710, 25, "right");
+									  myChart9.draw();
+									  function drawCatuGrav(data){
+										  var myChart10 = new dimple.chart(svg10, data);
+										  myChart10.setBounds(350, 40, 800, 280);
+										  var x = myChart10.addPctAxis("x", "Num_Acc");
+										  x.title = "";
+										  var y = myChart10.addCategoryAxis("y", "catu");
+										  y.title = "";
+										  myChart10.addSeries("grav", dimple.plot.bar);
+										  myChart10.addLegend(400, 15, 710, 25, "right");
+										  myChart10.draw();
+										  var filteredData = dimple.filterData(data, "catu", "Conducteur");
+										  var myChart11 = new dimple.chart(svg11, filteredData);
+										  myChart11.setBounds(300, 40, 800, 280);
+										  var x = myChart11.addCategoryAxis("x", "sexe");
+										  x.title = "";
+										  var y = myChart11.addPctAxis("y", "Num_Acc");
+										  y.title = "";
+										  myChart11.addSeries("grav", dimple.plot.bar);
+										  myChart11.addLegend(360, 15, 710, 25, "right");
+										  myChart11.draw();
+									  }
+									  d3.csv("dataviz5.csv", drawCatuGrav);
+								  }
+								  d3.csv("dataviz4.csv", drawCatrGrav);
+							  }
+							  d3.csv("dataviz3.csv", drawColGrav);
+						  }
+						  d3.csv("accidentsByCatv.csv", drawCatv);
+					  }
+					  d3.csv("accidentsByCatr.csv", drawCatr);
+					}
+					d3.csv("accidentsByWeekday.csv", drawWeekday);
+				  }
+				  d3.csv("accidentsByColType.csv", drawCol);
+			  };
+				  d3.csv("accidentsByLum.csv", drawLum);
+				/*
+				  */
+			};
+  /*
+    Use D3 (not dimple.js) to load the TSV file
+    and pass the contents of it to the draw function
+    */
+  d3.csv("nb_tues_1972_2016_3.csv", drawNbDead);
+  </script>
+
+
+
+<section id="footerp" height="5em">
+<center>
+<h3 class="animated slideInLeft " style="color:#FFFFFF" > Parce que la route nous concerne TOUS, partagez ! </h3>
+
+
+					<a href="#" class="fa fa-facebook"></a>
+					&nbsp
+					&nbsp
+					&nbsp
+					&nbsp
+					&nbsp
+					<a href="#" class="fa fa-twitter"></a>
+					&nbsp
+					&nbsp
+					&nbsp
+					&nbsp
+					&nbsp
+					<a href="#" class="fa fa-linkedin"></a>
+					</a>
+</div>
+</center>
+</section>
+</div>
+
+<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="6u 6u(medium) 12u$(small)">
+							<h3 class="animated slideInLeft "> Qui sommes nous ? </h3>
+							Ce site a été réalisé par 5 étudiants de l'ENSAE Paristech : <br>
+							<ul class="icons">
+								<li> <a href="mailto:bruno.abilou@ensae.fr" class="fa fa-envelope""><span class="label"></span></a></li>Bruno Abilou<br>
+								<li> <a href="mailto:youssouf.camara@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li>  Youssouf Camara <br>
+								<li> <a href="mailto:lina.cristancho@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li> Lina Cristancho <br>
+								<li> <a href="mailto:geremie.djohossou@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li>  Geremie Djohossou <br>
+								<li> <a href="mailto:charlotte.psaquier@ensae.fr" class="fa fa-envelope"><span class="label"></span></a></li>  Charlotte Pasquier <br>
+							</ul>
+						</section>
+						<section class="6u$ 12u$(medium) 12u$(small)">
+							<h3 class="animated slideInRight "> Et les données dans tout ça ? </h3>
+							<p>Les données utilisées pour la réalisation des graphiques proviennent du fichier <a href="https://www.data.gouv.fr/fr/datasets/base-de-donnees-accidents-corporels-de-la-circulation/r">BAAC</a>
+							mis à jour annuellement par l’Observatoire national interministériel de la sécurité routière. <br>
+							L'ensemble des données démographiques utilisées sont disponibles sur le site de <a href="https://www.insee.fr">l'insee</a>.</p>
+						</section>
+					</div
+				</div>
+			</footer>
+	</body>
+</html>
