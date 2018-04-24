@@ -132,6 +132,11 @@
 			g.dimple-axis g.tick text{
 				font-size: 13px !important;
 			}
+			<!--
+			#cliche3 g.dimple-axis g.tick text{
+				font-size: 10px !important;
+			}
+			-->
 			g.dimple-axis{
 				width: 500px !important;
 				height: 500px !important;
@@ -197,6 +202,11 @@
 			#newBanner{
 				height: 600px;
 				background-image: url("banner5.jpg");
+			}
+			.twoColumns{
+				display: flex;
+				justify-content: space-around;
+				width: 100%;
 			}
 		</style>
 
@@ -442,7 +452,7 @@
 				var svg3 = d3.select("#cliche2")
 					.append("svg")
 					  .attr("width", width + margin)
-					  .attr("height", height + margin)
+					  .attr("height", 150)
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart3');
@@ -453,7 +463,7 @@
 				var svg6 = d3.select("#cliche2")
 					.append("svg")
 					  .attr("width", width + margin)
-					  .attr("height", height + margin)
+					  .attr("height", 180)
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart6');
@@ -469,25 +479,36 @@
 					A l’origine d’un accident, il y a toujours une combinaison de multiples facteurs. Éblouis par le soleil rasant (beau jour et le soleil retrouvé), fatigue au volant (fin de semaine), sous l'effet de l'alcool (sortie des boîtes de nuit), les accidents se produisent généralement en début de week-ends (vendredi, samedi) et surtout pendant la période estivale (juillet, aôut).</h5>
 			</div>
 			</div>
+			<div class = "twoColumns">
+			<!--
+			<div id = "cliche31">
+			</div>
+			<div id = "cliche32">
+			</div>
+			-->
+			</div>
 			<script type="text/javascript">
-			d3.select("#cliche3")
+			/*
+			d3.select("#cliche31")
 					.append("h2")
 					.text("Nombre d'accidents en fonction du jour de la semaine");
-				var svg5 = d3.select("#cliche3")
+					*/
+				var svg5 = d3.select(".twoColumns")
 					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
+					  .attr("width", 850)
+					  .attr("height", 400)
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart5');
-
-				d3.select("#cliche3")
+/*
+				d3.select("#cliche32")
 					.append("h2")
 					.text("Nombre de personnes mortes par accidents par mois");
-				  var svg2 = d3.select("#cliche3")
+					*/
+				  var svg2 = d3.select(".twoColumns")
 					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
+					  .attr("width", 850)
+					  .attr("height", 400)
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart2');
@@ -497,19 +518,22 @@
 			<div id="cliche4" style="background-color:  transparent; border:5px solid white;border-radius: 25px;margin-bottom: 10px; padding: 8px 8px 8px 8px">
 			<div style="color:#000000; text-align: justify;">
 				<h4 class="titre_section"> Cliché n°4 : "La place du mort?"</h4>
-			<div style="color:#000000; text-align: justify;">
-				<h5 style="color:#000000">
+			
+			</div>
+			<div id = "divsvg11" class = "twoColumns">
+			<h5 style="color:#000000; text-align: justify; width: 400px;">
 					Le saviez-vous? Les accidents de la route sont plus mortels pour les piétons que pour les passagers ou les conducteurs eux-mêmes! Mais quand on est piéton, il semblerait que se déplacer en roller ou en trotinette permet de réduire la gravité des chocs.</h5>
 			</div>
-			</div>
 			<script type="text/javascript">
+			/*
 			d3.select("#cliche4")
 					.append("h2")
 					.text("Gravité du choc et catégorie de l'usager");
-			var svg10 = d3.select("#cliche4")
+					*/
+			var svg10 = d3.select("#divsvg11")
 					.append("svg")
-					  .attr("width", width + margin)
-					  .attr("height", height + margin)
+					  .attr("width", 850)
+					  .attr("height", 400)
 					.append('g')
 						.attr('class','chart')
 						.attr('id', 'chart10');
@@ -634,7 +658,7 @@
 				  y2.shapes.select("g.dimple-axis path.domain")
 					.style("stroke", "rgb(251, 128, 114)");
 				  var myChart2 = new dimple.chart(svg2, data);
-				  myChart2.setBounds(350, 10, 800, 250);
+				  //myChart2.setBounds(150, 0, 600, 400);
 				  var x = myChart2.addMeasureAxis("x", "nb_tues");
 				  x.title = "";
 				  var y = myChart2.addCategoryAxis("y", "mois");
@@ -666,11 +690,11 @@
 				  */
 					function drawWeekday(data){
 					  var myChart5 = new dimple.chart(svg5, data);
-					  myChart5.setBounds(350, 10, 800, 200);
-					  var x = myChart5.addMeasureAxis("x", "nbWeekday");
+					  //myChart5.setBounds(250, 10, 550, 200);
+					  var x = myChart5.addCategoryAxis("x", "weekday");
 					  x.title = "";
-					  var y = myChart5.addCategoryAxis("y", "weekday");
-					  y.addOrderRule(["dimanche", "samedi", "vendredi", "jeudi", "mercredi", "mardi", "lundi"]);
+					  var y = myChart5.addMeasureAxis("y", "nbWeekday");
+					  x.addOrderRule(["dimanche", "samedi", "vendredi", "jeudi", "mercredi", "mardi", "lundi"]);
 					  y.title = "";
 					  myChart5.addSeries(null, dimple.plot.bar);
 					  myChart5.draw();
@@ -718,13 +742,13 @@
 									  myChart9.draw();
 									  function drawCatuGrav(data){
 										  var myChart10 = new dimple.chart(svg10, data);
-										  myChart10.setBounds(350, 40, 800, 280);
+										  myChart10.setBounds(250, 0, 400, 300);
 										  var x = myChart10.addPctAxis("x", "Num_Acc");
 										  x.title = "";
 										  var y = myChart10.addCategoryAxis("y", "catu");
 										  y.title = "";
 										  myChart10.addSeries("grav", dimple.plot.bar);
-										  myChart10.addLegend(400, 15, 710, 25, "right");
+										  myChart10.addLegend(260, 15, 390, 300, "right");
 										  myChart10.draw();
 										  var filteredData = dimple.filterData(data, "catu", "Conducteur");
 										  var myChart11 = new dimple.chart(svg11, filteredData);
