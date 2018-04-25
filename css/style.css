@@ -4470,36 +4470,7 @@ i.fa {
   color: #333;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-/*clearfixes*/
 
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-
-.cf:after {
-  clear: both;
-}
-
-.main-container {
-  background: #fff;
-  max-width: 1000px;
-  margin: 25px auto 25px auto;
-  position: relative;
-}
-
-.container {
-  position: relative;
-  padding: 25px;
-}
 /*animation element*/
 
 .animation-element {
